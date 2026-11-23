@@ -2,11 +2,15 @@
 
 QRコードから開く、物件のWeb内覧ページです。`site/` がそのまま公開されます（静的サイト・ビルド不要）。
 
+公開中のページ: https://claude.ai/artifact/YY4Roxk8q1inrdeu5JMp7c
+（`artifact/index.html` と `site/` の画像・動画・資料を claude.ai に公開したもの。QRコードは `qr/` にあります）
+
 ## 構成
 
 | パス | 内容 |
 | --- | --- |
-| `site/index.html` | 公開ページ（`tools/build.py` で生成） |
+| `site/index.html` | 公開ページ（`tools/build.py` で生成。Vercel などにそのまま置ける版） |
+| `artifact/index.html` | 同じページの claude.ai 公開用（外枠のhtml/headを除いた版。同じく自動生成） |
 | `site/img/` | 写真（WebP。`-l` 拡大表示用 / `-m` 見どころ用 / `-t` サムネイル） |
 | `site/media/` | 浴室の動画（720p H.264）とポスター画像 |
 | `site/docs/` | 設備資料PDF（圧縮済み） |

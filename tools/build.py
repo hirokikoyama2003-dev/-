@@ -69,16 +69,26 @@ def main():
     index_of = {it["id"]: n for n, it in enumerate(items) if it["type"] == "photo"}
     video_index = next(n for n, it in enumerate(items) if it["type"] == "video")
 
-    # ---- documents
+    # ---- documents (a document may be split into several PDF files)
+    def human(size):
+        return f"{size / 1048576:.1f}MB" if size >= 1048576 else f"{max(1, round(size / 1024))}KB"
+
     docs, listed = [], {}
-    for key, (f, px, py, file, name, note, area) in DOCS.items():
-        p = SITE / "docs" / file
-        size = p.stat().st_size
+    for key, (f, px, py, files, name, note, area) in DOCS.items():
+        files = files if isinstance(files, list) else [files]
+        parts, first_page, total = [], 1, 0
+        for k, file in enumerate(files, 1):
+            p = SITE / "docs" / file
+            size, pages = p.stat().st_size, pdf_pages(p)
+            label = f"{k}/{len(files)}" if len(files) > 1 else "PDF"
+            parts.append(dict(file=f"docs/{file}", label=label, mb=human(size),
+                              range=f"{first_page}〜{first_page + pages - 1}ページ"))
+            first_page += pages
+            total += size
         x, y = abs_xy(f, px, py)
-        mb = f"{size / 1048576:.1f}MB" if size >= 1048576 else f"{max(1, round(size / 1024))}KB"
-        docs.append(dict(key=key, f=f, x=x, y=y, file=f"docs/{file}", name=name, note=note, area=area,
-                         pages=pdf_pages(p), mb=mb, big=size > 10 * 1048576))
-        listed.setdefault(file, []).append(len(docs) - 1)
+        docs.append(dict(key=key, f=f, x=x, y=y, name=name, note=note, area=area, parts=parts,
+                         pages=first_page - 1, mb=human(total), big=total > 10 * 1048576))
+        listed.setdefault(files[0], []).append(len(docs) - 1)
 
     # ---- plans
     plans_html, tabs, summaries = [], [], []
@@ -127,11 +137,15 @@ def main():
         d = docs[idxs[0]]
         areas = "・".join(dict.fromkeys(docs[i]["area"] for i in idxs))
         badge = '<span class="badge">大容量</span>' if d["big"] else ""
-        groups[d["f"]].append(
-            f'<li><a class="doc" href="{d["file"]}" target="_blank" rel="noopener">'
-            f'<span class="doc-ic">PDF</span><span class="doc-t"><b>{esc(d["name"])}{badge}</b>'
-            f'<span>{esc(d["note"])}</span><em>{esc(areas)} ・ {d["pages"]}ページ ・ {d["mb"]}</em></span>'
-            f'<svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li>')
+        text = (f'<span class="doc-ic">PDF</span><span class="doc-t"><b>{esc(d["name"])}{badge}</b>'
+                f'<span>{esc(d["note"])}</span><em>{esc(areas)} ・ {d["pages"]}ページ ・ {d["mb"]}</em></span>')
+        go = '<svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg>'
+        if len(d["parts"]) == 1:
+            groups[d["f"]].append(f'<li><a class="doc" href="{d["parts"][0]["file"]}" target="_blank" rel="noopener">{text}{go}</a></li>')
+        else:
+            links = "".join(f'<a href="{p["file"]}" target="_blank" rel="noopener">{p["label"]}<small>{p["range"]}・{p["mb"]}</small></a>'
+                            for p in d["parts"])
+            groups[d["f"]].append(f'<li><div class="doc">{text}</div><div class="doc-parts">{links}</div></li>')
     docs_html = "".join(f'<div class="doc-group"><h3>{n}階</h3><ul class="docs">{"".join(v)}</ul></div>'
                         for n, v in groups.items() if v)
 
@@ -154,6 +168,19 @@ def main():
         out = out.replace(key, val)
     (SITE / "index.html").write_text(out)
     print(f"site/index.html  {len(out) / 1024:.0f} KB  items={len(items)} docs={len(docs)}")
+
+    # ---- claude.ai Artifact variant: same page without the document wrapper
+    # (the Artifact host adds doctype/head/body itself); assets are published
+    # from site/ at the same relative paths.
+    head = out[out.index("<head>") + 6:out.index("</head>")]
+    body = out[out.index("<body>") + 6:out.index("</body>")]
+    style = head[head.index("<style>"):head.index("</style>") + 8]
+    art = ('<title>世田谷1丁目住宅</title>\n'
+           '<meta name="claude:viewport-fit-sides" content="cover">\n'
+           f'{style}\n{body}')
+    (ROOT / "artifact").mkdir(exist_ok=True)
+    (ROOT / "artifact" / "index.html").write_text(art)
+    print(f"artifact/index.html  {len(art) / 1024:.0f} KB")
 
 
 if __name__ == "__main__":

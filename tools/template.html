@@ -29,13 +29,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 .eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--accent)}
 h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.05em}
 .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:40;background:rgba(23,21,19,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);color:#fff}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:41;background:var(--dark)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(23,21,19,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);color:#fff}
 .nav-in{display:flex;align-items:center;gap:12px;height:52px}
 .brand{font-weight:700;font-size:14px;letter-spacing:.08em;white-space:nowrap;text-decoration:none}
 .brand small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.2em;color:#d9b27c;line-height:1.2}
@@ -51,12 +52,12 @@ h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.05em}
 .hero-media{position:relative;height:min(74svh,640px);overflow:hidden}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(18,16,14,.86) 100%)}
-.hero-title{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 20px 22px}
+.hero-title{position:absolute;left:0;right:0;bottom:0;z-index:1;padding-block:0 22px;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
 .hero-title .eyebrow{color:#e2bd86}
 .h1-like{margin:0;font-size:30px;font-weight:800;letter-spacing:.08em;line-height:1.3}
 .desktop-only{display:none}
 .hero-sub{margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.82)}
-.hero-body{padding:18px 16px 26px}
+.hero-body{padding-block:18px 26px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 .facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .facts li{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 12px;font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.4}
 .facts b{display:block;font-size:17px;color:#fff;letter-spacing:.04em}
@@ -156,8 +157,12 @@ h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.05em}
 .doc-t b{display:block;font-size:14px;line-height:1.45}
 .doc-t span{display:block;font-size:12px;color:var(--ink2);line-height:1.5}
 .doc-t em{font-style:normal;font-size:11.5px;color:var(--ink3)}
-.badge{display:inline-block;margin-left:6px;padding:0 6px;border-radius:4px;background:#fdeee6;color:#a3412a;font-size:10.5px;font-weight:700;vertical-align:1px}
+.doc-t .badge,.badge{display:inline-block;margin-left:6px;padding:0 6px;border-radius:4px;background:#fdeee6;color:#a3412a;font-size:10.5px;font-weight:700;vertical-align:1px}
 .doc-go{flex:none;width:20px;height:20px;fill:var(--ink3)}
+.doc-parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 14px 14px 66px}
+.doc-parts a{display:block;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:13px;font-weight:700;text-decoration:none;line-height:1.4}
+.doc-parts small{display:block;font-size:11px;font-weight:500;color:var(--ink3)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);z-index:120;background:var(--dark);color:#fff;font-size:13px;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
 
 /* footer */
 .foot{margin-top:56px;background:#efebe5;color:var(--ink2);font-size:12px;padding:28px 0 calc(36px + env(safe-area-inset-bottom))}
@@ -169,7 +174,7 @@ h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.05em}
 .lb{position:fixed;inset:0;z-index:100;background:#0d0c0b;color:#fff;display:flex;flex-direction:column;opacity:0;transition:opacity .18s}
 .lb[hidden]{display:none}
 .lb.is-open{opacity:1}
-.lb-top{display:flex;align-items:center;justify-content:space-between;padding:calc(8px + env(safe-area-inset-top)) 10px 6px 16px;font-size:13px;color:rgba(255,255,255,.8)}
+.lb-top{display:flex;align-items:center;justify-content:space-between;padding:calc(8px + env(safe-area-inset-top, 0px)) calc(10px + env(safe-area-inset-right, 0px)) 6px calc(16px + env(safe-area-inset-left, 0px));font-size:13px;color:rgba(255,255,255,.8)}
 .lb-x{width:44px;height:44px;border:0;background:rgba(255,255,255,.1);border-radius:50%;display:grid;place-items:center;cursor:pointer}
 .lb-x svg{width:20px;height:20px;fill:#fff}
 .lb-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:pan-y pinch-zoom}
@@ -182,7 +187,7 @@ video.lb-media{max-height:100%;width:100%;background:#000}
 .lb-spin{position:absolute;width:28px;height:28px;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:none}
 .lb-stage.loading .lb-spin{display:block}
 @keyframes spin{to{transform:rotate(360deg)}}
-.lb-info{display:flex;align-items:center;gap:12px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(0deg,#0d0c0b,rgba(13,12,11,.9))}
+.lb-info{display:flex;align-items:center;gap:12px;padding:12px calc(16px + env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) calc(16px + env(safe-area-inset-left, 0px));background:linear-gradient(0deg,#0d0c0b,rgba(13,12,11,.9))}
 .lb-mini{flex:none;width:112px;border-radius:8px;background:#f7f5f1;padding:4px;border:0;cursor:pointer}
 .lb-mini svg{display:block;width:100%;height:auto}
 .lb-txt{flex:1;min-width:0}
@@ -198,7 +203,10 @@ video.lb-media{max-height:100%;width:100%;background:#000}
 .sheet h3{font-size:18px;font-weight:800}
 .sheet p{margin:6px 0 0;color:var(--ink2);font-size:13.5px}
 .sheet .warn{color:#a3412a;font-size:12.5px}
-.sheet-act{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.sheet-parts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.sheet-parts a:only-child{grid-column:1/-1}
+.sheet-parts small{font-weight:500;font-size:11px;opacity:.75}
+.sheet-close{width:100%;margin-top:10px}
 .btn-dark{background:var(--dark);color:#fff}
 .btn-line{border-color:var(--line);color:var(--ink);background:#fff}
 
@@ -364,7 +372,8 @@ video.lb-media{max-height:100%;width:100%;background:#000}
     <p id="sh-note"></p>
     <p id="sh-meta"></p>
     <p class="warn" id="sh-warn" hidden>ファイルサイズが大きいため、Wi-Fi環境での閲覧をおすすめします。</p>
-    <div class="sheet-act"><button class="btn btn-line" type="button" id="sh-close">閉じる</button><a class="btn btn-dark" id="sh-open" href="#" target="_blank" rel="noopener">PDFを開く</a></div>
+    <div class="sheet-parts" id="sh-parts"></div>
+    <button class="btn btn-line sheet-close" type="button" id="sh-close">閉じる</button>
   </div>
 </dialog>
 
@@ -381,6 +390,15 @@ const DATA = __DATA__;
     video: '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
     doc: '<svg viewBox="0 0 24 24"><path d="M6 2h8l6 6v14H6V2zm7 1.5V9h5.5L13 3.5zM8 12v1.6h10V12H8zm0 3.4V17h10v-1.6H8zm0 3.4v1.6h7v-1.6H8z"/></svg>'
   };
+  // Inside an embedding frame (e.g. a claude.ai Artifact) the page must not
+  // touch the host's history, and Web Share / the frame URL are not usable.
+  const framed = (() => { try { return window.self !== window.top; } catch (_) { return true; } })();
+  function toast(msg) {
+    const t = document.createElement("div");
+    t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2200);
+  }
   const items = DATA.items;           // gallery order (photos + video)
   const floors = DATA.floors;
   let curFloor = 1;
@@ -521,7 +539,7 @@ const DATA = __DATA__;
     render(0);
     requestAnimationFrame(() => lb.classList.add("is-open"));
     $("#lb-close").focus();
-    if (location.hash !== "#view") history.pushState({ lb: true }, "", "#view");
+    if (!framed && location.hash !== "#view") history.pushState({ lb: true }, "", "#view");
   }
   function closeLB(fromPop) {
     if (lb.hidden) return;
@@ -583,10 +601,11 @@ const DATA = __DATA__;
     $("#sh-area").textContent = `${d.f}F ・ ${d.area}`;
     $("#sh-name").textContent = d.name;
     $("#sh-note").textContent = d.note;
-    $("#sh-meta").textContent = `PDF ・ ${d.pages}ページ ・ ${d.mb}`;
-    $("#sh-warn").hidden = !d.big;
-    $("#sh-open").href = d.file;
-    if (sheet.showModal) sheet.showModal(); else window.open(d.file, "_blank");
+    const multi = d.parts.length > 1;
+    $("#sh-meta").textContent = `PDF ・ ${d.pages}ページ ・ ${d.mb}${multi ? `（${d.parts.length}分割）` : ""}`;
+    $("#sh-warn").hidden = !d.big || multi;
+    $("#sh-parts").innerHTML = d.parts.map(p => `<a class="btn btn-dark" href="${p.file}" target="_blank" rel="noopener">${multi ? `${p.label}<small>${p.range}</small>` : "PDFを開く"}</a>`).join("");
+    sheet.showModal();
   }
   $("#sh-close").addEventListener("click", () => sheet.close());
   sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); });
@@ -608,11 +627,13 @@ const DATA = __DATA__;
   ["highlights", "plan", "gallery", "video", "docs"].forEach(id => io.observe(document.getElementById(id)));
 
   /* ---------------- share ---------------- */
-  $(".share").addEventListener("click", async () => {
+  const shareBtn = $(".share");
+  if (framed) shareBtn.hidden = true;
+  shareBtn.addEventListener("click", async () => {
     const url = location.href.split("#")[0].split("?")[0];
     try {
       if (navigator.share) await navigator.share({ title: document.title, url });
-      else { await navigator.clipboard.writeText(url); alert("URLをコピーしました"); }
+      else { await navigator.clipboard.writeText(url); toast("URLをコピーしました"); }
     } catch (_) {}
   });
 
@@ -620,7 +641,7 @@ const DATA = __DATA__;
   layoutPlan();
   setFloor(1);
   new ResizeObserver(layoutPlan).observe(stage);
-  if (location.hash === "#view") history.replaceState(null, "", location.pathname + location.search);
+  if (!framed && location.hash === "#view") history.replaceState(null, "", location.pathname + location.search);
 })();
 </script>
 </body>

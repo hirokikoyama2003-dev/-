@@ -79,7 +79,9 @@ DOCS = {
     "A": (1, 68.2, 61.0, "smart-key.pdf", "玄関ドア スマートコントロールキー", "LIXIL ／ ボタン・カード・リモコンで施解錠", "玄関"),
     "B": (1, 82.6, 57.8, "delivery-box.pdf", "宅配ボックス付き機能門柱", "不在時も荷物を受け取れます", "アプローチ"),
     "C": (1, 71.7, 68.7, "storage-examples.pdf", "収納のコーディネート実例", "DAIKEN「収育スタイリング」", "玄関"),
-    "D": (1, 15.9, 59.1, "soundproof-room-catalog.pdf", "防音室 総合カタログ", "DAIKEN「サウンドデザイン」", "防音室"),
+    # 172 pages: split into four files so each part opens quickly on a phone
+    "D": (1, 15.9, 59.1, [f"soundproof-room-catalog-{n}.pdf" for n in range(1, 5)],
+          "防音室 総合カタログ", "DAIKEN「サウンドデザイン」", "防音室"),
     "E": (1, 13.3, 21.1, "air-conditioner-manual.pdf", "ルームエアコン 取扱説明書", "三菱電機 霧ヶ峰", "防音室"),
     "F": (1, 45.3, 10.2, "bathroom-spage.pdf", "システムバス 仕様", "LIXIL「SPAGE（スパージュ）」", "浴室"),
     "G": (1, 34.2, 10.0, "vanity.pdf", "洗面化粧台 仕様", "LIXIL（INAX）", "洗面"),
