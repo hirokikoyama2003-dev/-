@@ -3,7 +3,9 @@
 Usage: python3 tools/qr.py <url> [out_dir]
 
 Follows common print guidance:
-  * error correction Q (~25%) so a scratched / creased flyer still scans
+  * error correction M (~15%, the usual choice for print): with this URL it
+    gives a 29x29 symbol, so each module is larger and the code still scans
+    when printed small or viewed zoomed-out on a screen
   * 4-module quiet zone, pure black on white (no inversion, no logo)
   * vector SVG / PDF for the printer, PNG for screens and office tools
   * every output is decoded again to prove it scans, including a copy
@@ -40,7 +42,7 @@ def decode(img):
 def main(url, out):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
-    qr = segno.make(url, error="q", micro=False, boost_error=True)
+    qr = segno.make(url, error="m", micro=False, boost_error=True)
     qr.save(out / "qr.svg", scale=10, border=4, dark="#000000", light="#ffffff")
     qr.save(out / "qr.pdf", scale=10, border=4, dark="#000000")
     size = qr.symbol_size(scale=1, border=4)[0]
