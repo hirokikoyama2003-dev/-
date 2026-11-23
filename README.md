@@ -2,8 +2,8 @@
 
 QRコードから開く、物件のWeb内覧ページです。`site/` がそのまま公開されます（静的サイト・ビルド不要）。
 
-公開中のページ: https://claude.ai/artifact/YY4Roxk8q1inrdeu5JMp7c
-（`artifact/index.html` と `site/` の画像・動画・資料を claude.ai に公開したもの。QRコードは `qr/` にあります）
+公開中のページ: https://setagaya1-tour.vercel.app/
+（Vercel プロジェクト `setagaya1-tour`。このリポジトリに push すると自動で再公開されます。QRコードは `qr/` にあります）
 
 ## 構成
 
