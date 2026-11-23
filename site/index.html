@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>世田谷1丁目住宅｜Web内覧</title>
+<meta name="description" content="世田谷1丁目住宅のWeb内覧。ビルトインガレージ・防音室・約22.4帖のLDKを備えた3階建て。間取り図から写真48枚・動画・設備資料をご覧いただけます。">
+<meta name="theme-color" content="#171513">
+<meta property="og:type" content="website">
+<meta property="og:title" content="世田谷1丁目住宅｜Web内覧">
+<meta property="og:description" content="間取り図から写真48枚・動画・設備資料を見られるWeb内覧ページです。">
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171513'/%3E%3Cpath d='M16 30 32 17l16 13v17H37V36H27v11H16z' fill='%23d9b27c'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero-1000.webp" imagesrcset="img/hero-640.webp 640w, img/hero-1000.webp 1000w" imagesizes="(min-width: 960px) 44vw, 100vw" fetchpriority="high">
+<style>
+:root{
+  --bg:#f7f5f1;--paper:#fff;--ink:#1f1c19;--ink2:#5c554d;--ink3:#8a8379;--line:#e7e1d8;
+  --accent:#9a6b3c;--accent-soft:#f4ece2;--dark:#171513;
+  --photo:#c25e37;--video:#1c6e89;--doc:#4a5565;
+  --radius:14px;--shadow:0 1px 2px rgba(30,25,20,.06),0 8px 24px rgba(30,25,20,.07);
+  --font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.75;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--accent)}
+h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.05em}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:rgba(23,21,19,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);color:#fff}
+.nav-in{display:flex;align-items:center;gap:12px;height:52px}
+.brand{font-weight:700;font-size:14px;letter-spacing:.08em;white-space:nowrap;text-decoration:none}
+.brand small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.2em;color:#d9b27c;line-height:1.2}
+.nav-links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{padding:8px 10px;border-radius:999px;font-size:13px;text-decoration:none;color:rgba(255,255,255,.78);white-space:nowrap}
+.nav-links a.is-current{background:rgba(255,255,255,.14);color:#fff}
+.share{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;cursor:pointer}
+.share svg{width:18px;height:18px;fill:#fff}
+
+/* ---------- hero ---------- */
+.hero{background:var(--dark);color:#fff}
+.hero-media{position:relative;height:min(74svh,640px);overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(18,16,14,.86) 100%)}
+.hero-title{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 20px 22px}
+.hero-title .eyebrow{color:#e2bd86}
+.h1-like{margin:0;font-size:30px;font-weight:800;letter-spacing:.08em;line-height:1.3}
+.desktop-only{display:none}
+.hero-sub{margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.82)}
+.hero-body{padding:18px 16px 26px}
+.facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.facts li{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 12px;font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.4}
+.facts b{display:block;font-size:17px;color:#fff;letter-spacing:.04em}
+.lead{margin:16px 0 0;font-size:14px;color:rgba(255,255,255,.84)}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:#d9b27c;color:#1b1712}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* ---------- sections ---------- */
+.sec{padding:52px 0 8px}
+.sec-head{margin-bottom:20px}
+.sec-head h2{font-size:22px;font-weight:800}
+.sec-lead{margin:8px 0 0;color:var(--ink2);font-size:14px}
+
+/* highlights */
+.hl{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;padding:2px 16px 14px;margin:0 -16px;scrollbar-width:none}
+.hl::-webkit-scrollbar{display:none}
+.hl-card{scroll-snap-align:start;background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:0;padding:0;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start}
+.hl-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#ddd}
+.hl-card div{padding:12px 14px 16px}
+.hl-card h3{font-size:16px;font-weight:800}
+.hl-card p{margin:6px 0 0;font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* plan */
+.plan-card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.plan-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px;border-bottom:1px solid var(--line)}
+.floor-tabs{display:flex;background:#f1ede7;border-radius:999px;padding:4px;gap:2px}
+.floor-tabs button{border:0;background:transparent;border-radius:999px;padding:7px 16px;font-weight:800;font-size:15px;cursor:pointer;color:var(--ink2);line-height:1.2}
+.floor-tabs button small{display:block;font-size:10px;font-weight:600;letter-spacing:0}
+.floor-tabs button[aria-selected=true]{background:var(--dark);color:#fff}
+.layers{display:flex;gap:6px;flex-wrap:wrap}
+.layers label{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;cursor:pointer;user-select:none;background:#fff}
+.layers input{position:absolute;opacity:0;pointer-events:none}
+.layers .sw{width:10px;height:10px;border-radius:50%}
+.layers label:has(input:not(:checked)){opacity:.45;text-decoration:line-through}
+.layers input:focus-visible+.sw{outline:2px solid var(--accent);outline-offset:2px}
+.plan-stage{position:relative;padding:14px 12px 10px}
+.plan-floor{position:relative;margin:0 auto}
+.plan-floor[hidden],.summary[hidden]{display:none}
+.plan-floor .lbl .v,.plan-floor.is-rot .lbl.has-v .h{display:none}
+.plan-floor.is-rot .lbl.has-v .v{display:inline}
+.plan-floor svg{display:block;width:100%;height:auto;overflow:visible}
+.pins{position:absolute;inset:0}
+.pin{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid #fff;background:var(--photo);color:#fff;display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.28);transition:transform .15s}
+.pin svg{width:14px;height:14px;fill:currentColor}
+.pin-video{background:var(--video)}
+.pin-doc{width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:7px;background:var(--doc)}
+.pin-doc svg{width:12px;height:12px}
+.pin:hover,.pin:focus-visible{transform:scale(1.18);z-index:3}
+.pin:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pin.pulse{z-index:4;animation:pulse 1.1s ease-out 3}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(194,94,55,.7)}100%{box-shadow:0 0 0 18px rgba(194,94,55,0)}}
+.pin[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-size:12px;font-weight:600;white-space:nowrap;padding:4px 9px;border-radius:6px;pointer-events:none}
+.plan-stage.hide-photo .pin-photo,.plan-stage.hide-video .pin-video,.plan-stage.hide-doc .pin-doc{display:none}
+.compass{position:absolute;top:12px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid var(--line);display:grid;place-items:center;z-index:2}
+.compass svg{width:26px;height:26px;transition:transform .2s}
+.plan-foot{padding:4px 14px 16px}
+.summary{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.summary li{font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:#6b4a28}
+.strip-h{display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 8px;font-size:13px;font-weight:700}
+.strip-h a{font-size:12px;font-weight:600;color:var(--accent)}
+.strip{display:flex;align-items:flex-start;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
+.strip button{flex:none;width:92px;border:0;padding:0;background:none;cursor:pointer;scroll-snap-align:start;text-align:left}
+.strip img{width:92px;height:92px;object-fit:cover;border-radius:10px;background:#e8e4de}
+.strip span{display:block;margin-top:4px;font-size:11px;line-height:1.35;color:var(--ink2);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.hint{margin:10px 0 0;font-size:12px;color:var(--ink3)}
+
+/* gallery */
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12.5px;text-decoration:none;color:var(--ink2)}
+.g-sec{padding-top:18px}
+.g-sec h3{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:baseline;gap:8px}
+.g-sec h3 small{font-size:12px;font-weight:600;color:var(--ink3)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.g-item{position:relative;border:0;padding:0;background:#e8e4de;cursor:pointer;aspect-ratio:1;overflow:hidden;border-radius:6px}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.g-item:hover img{transform:scale(1.04)}
+.g-item .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.18)}
+.g-item .play svg{width:38px;height:38px;fill:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+.g-item .vt{position:absolute;right:6px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.55);padding:1px 6px;border-radius:4px}
+
+/* video */
+.video-card{background:var(--dark);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);max-width:420px;margin:0 auto}
+.video-card video{display:block;width:100%;aspect-ratio:9/16;background:#000;object-fit:cover}
+.video-card p{margin:0;padding:12px 16px;color:rgba(255,255,255,.8);font-size:13px}
+
+/* docs */
+.doc-group h3{font-size:14px;font-weight:800;margin:18px 0 8px;color:var(--ink2)}
+.docs{list-style:none;margin:0;padding:0;background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.docs li+li{border-top:1px solid var(--line)}
+.doc{display:flex;align-items:center;gap:12px;padding:13px 14px;text-decoration:none}
+.doc-ic{flex:none;width:40px;height:48px;border-radius:6px;background:#f2efe9;display:grid;place-items:center;font-size:10px;font-weight:800;color:#a3412a;border:1px solid var(--line)}
+.doc-t{flex:1;min-width:0}
+.doc-t b{display:block;font-size:14px;line-height:1.45}
+.doc-t span{display:block;font-size:12px;color:var(--ink2);line-height:1.5}
+.doc-t em{font-style:normal;font-size:11.5px;color:var(--ink3)}
+.badge{display:inline-block;margin-left:6px;padding:0 6px;border-radius:4px;background:#fdeee6;color:#a3412a;font-size:10.5px;font-weight:700;vertical-align:1px}
+.doc-go{flex:none;width:20px;height:20px;fill:var(--ink3)}
+
+/* footer */
+.foot{margin-top:56px;background:#efebe5;color:var(--ink2);font-size:12px;padding:28px 0 calc(36px + env(safe-area-inset-bottom))}
+.foot ul{margin:0;padding-left:1.2em}
+.foot li{margin:2px 0}
+.foot p{margin:14px 0 0;color:var(--ink3)}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:#0d0c0b;color:#fff;display:flex;flex-direction:column;opacity:0;transition:opacity .18s}
+.lb[hidden]{display:none}
+.lb.is-open{opacity:1}
+.lb-top{display:flex;align-items:center;justify-content:space-between;padding:calc(8px + env(safe-area-inset-top)) 10px 6px 16px;font-size:13px;color:rgba(255,255,255,.8)}
+.lb-x{width:44px;height:44px;border:0;background:rgba(255,255,255,.1);border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.lb-x svg{width:20px;height:20px;fill:#fff}
+.lb-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:pan-y pinch-zoom}
+.lb-media{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;user-select:none;-webkit-user-drag:none;transition:transform .22s ease,opacity .22s}
+.lb-media.dragging{transition:none}
+video.lb-media{max-height:100%;width:100%;background:#000}
+.lb-nav{position:absolute;top:50%;width:48px;height:48px;margin-top:-24px;border:0;border-radius:50%;background:rgba(255,255,255,.12);display:none;place-items:center;cursor:pointer}
+.lb-nav svg{width:22px;height:22px;fill:#fff}
+.lb-prev{left:16px}.lb-next{right:16px}
+.lb-spin{position:absolute;width:28px;height:28px;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:none}
+.lb-stage.loading .lb-spin{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lb-info{display:flex;align-items:center;gap:12px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(0deg,#0d0c0b,rgba(13,12,11,.9))}
+.lb-mini{flex:none;width:112px;border-radius:8px;background:#f7f5f1;padding:4px;border:0;cursor:pointer}
+.lb-mini svg{display:block;width:100%;height:auto}
+.lb-txt{flex:1;min-width:0}
+.lb-sec{margin:0;font-size:11.5px;color:#d9b27c;font-weight:700;letter-spacing:.06em}
+.lb-title{margin:2px 0 0;font-size:16px;font-weight:800;line-height:1.4}
+.lb-loc{margin-top:6px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer}
+
+/* doc sheet */
+.sheet{border:0;padding:0;border-radius:18px 18px 0 0;width:100%;max-width:520px;margin:auto auto 0;background:var(--paper);color:var(--ink)}
+.sheet::backdrop{background:rgba(10,9,8,.5)}
+.sheet-in{padding:22px 20px calc(20px + env(safe-area-inset-bottom))}
+.sheet .eyebrow{margin-bottom:4px}
+.sheet h3{font-size:18px;font-weight:800}
+.sheet p{margin:6px 0 0;color:var(--ink2);font-size:13.5px}
+.sheet .warn{color:#a3412a;font-size:12.5px}
+.sheet-act{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-line{border-color:var(--line);color:var(--ink);background:#fff}
+
+@media (min-width:720px){
+  body{font-size:16px}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .cta{display:flex}
+  .hl{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0;gap:18px}
+  .grid{grid-template-columns:repeat(5,1fr);gap:6px}
+  .lb-nav{display:grid}
+  .sheet{border-radius:18px;margin:auto}
+  .sec-head h2{font-size:26px}
+}
+@media (min-width:960px){
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(86vh,760px)}
+  .hero-media{height:auto;order:2}
+  .hero-media img{position:absolute;inset:0}
+  .hero-media::after{background:linear-gradient(90deg,rgba(23,21,19,.35),rgba(0,0,0,0) 30%)}
+  .hero-main{display:flex;flex-direction:column;justify-content:center;padding:48px max(32px,calc((100vw - 1120px)/2 + 16px));padding-right:48px}
+  .hero-title{position:static;padding:0}
+  .h1-like{font-size:44px}
+  .mobile-only{display:none}
+  .desktop-only{display:block}
+  .hero-sub{font-size:15px}
+  .hero-body{padding:24px 0 0}
+  .lead{font-size:15px}
+  .plan-stage{padding:24px 28px 12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="ページ内メニュー">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">世田谷1丁目住宅<small>WEB内覧</small></a>
+    <div class="nav-links">
+      <a href="#highlights">見どころ</a><a href="#plan">間取り</a><a href="#gallery">写真</a><a href="#video">動画</a><a href="#docs">設備資料</a>
+    </div>
+    <button class="share" type="button" aria-label="このページを共有"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .5.1.7L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9-1.2-2.9-2.8-2.9z"/></svg></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img src="img/hero-1000.webp" srcset="img/hero-640.webp 640w, img/hero-1000.webp 1000w" sizes="(min-width: 960px) 44vw, 100vw" width="1000" height="1786" alt="世田谷1丁目住宅の外観" fetchpriority="high">
+    <div class="hero-title mobile-only" aria-hidden="true">
+      <p class="eyebrow">WEB内覧 ／ ONLINE TOUR</p>
+      <p class="h1-like">世田谷1丁目住宅</p>
+      <p class="hero-sub">3階建て・ビルトインガレージ付き一戸建て</p>
+    </div>
+  </div>
+  <div class="hero-main">
+    <h1 class="visually-hidden">世田谷1丁目住宅 Web内覧</h1>
+    <div class="hero-title desktop-only" aria-hidden="true">
+      <p class="eyebrow">WEB内覧 ／ ONLINE TOUR</p>
+      <p class="h1-like">世田谷1丁目住宅</p>
+      <p class="hero-sub">3階建て・ビルトインガレージ付き一戸建て</p>
+    </div>
+    <div class="hero-body">
+      <ul class="facts">
+        <li>LDK<b>約22.4帖</b></li>
+        <li>防音室<b>約9.4帖</b></li>
+        <li>階数<b>3階建て</b></li>
+        <li>写真・動画<b>48枚＋1本</b></li>
+      </ul>
+      <p class="lead">間取り図のピンをタップすると、その場所の写真・動画・設備資料が開きます。現地に行く前に、部屋のつながりや広さをご確認いただけます。</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#plan"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m2 2v14h6v-4h2v4h6v-6h-6V9h-2v4H5V5m8 0v2h6V5h-6Z"/></svg>間取りから見る</a>
+        <a class="btn btn-ghost" href="#gallery"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4V4m9 0h7v7h-7V4M4 13h7v7H4v-7m9 0h7v7h-7v-7Z"/></svg>写真一覧</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="highlights">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">HIGHLIGHTS</p><h2>この住まいの見どころ</h2></div>
+    <div class="hl"><button type="button" class="hl-card" data-i="25"><img src="img/25-m.webp" alt="LDK" loading="lazy" decoding="async" width="960" height="719"><div><h3>LDK 約22.4帖・床暖房</h3><p>バルコニーに面した2階のLDK。床暖房とライティングレールを備えています。</p></div></button><button type="button" class="hl-card" data-i="32"><img src="img/31-m.webp" alt="アイランドキッチン" loading="lazy" decoding="async" width="960" height="719"><div><h3>アイランドキッチン</h3><p>タッチレス水栓2基・3口コンロ。背面に吊戸棚、隣に約1.7帖のパントリー。</p></div></button><button type="button" class="hl-card" data-i="15"><img src="img/21-m.webp" alt="防音室" loading="lazy" decoding="async" width="720" height="960"><div><h3>防音室 約9.4帖</h3><p>1階に防音仕様の洋室。音楽・シアター・在宅ワークなどに。</p></div></button><button type="button" class="hl-card" data-i="21"><img src="img/17-m.webp" alt="浴室（浴室テレビ）" loading="lazy" decoding="async" width="960" height="719"><div><h3>浴室テレビ付きバスルーム</h3><p>LIXIL「スパージュ」1620サイズ。洗面はダブルボウル。</p></div></button><button type="button" class="hl-card" data-i="3"><img src="img/3-m.webp" alt="ビルトインガレージ" loading="lazy" decoding="async" width="720" height="960"><div><h3>ビルトインガレージ</h3><p>建物内に駐車スペース。玄関はスマートキー、宅配ボックス付き。</p></div></button><button type="button" class="hl-card" data-i="9"><img src="img/9-m.webp" alt="シューズクローク（可動棚）" loading="lazy" decoding="async" width="720" height="960"><div><h3>充実の収納</h3><p>シューズクローク約1.2帖、パントリー、各階に収納。2階にはワークスペースも。</p></div></button></div>
+  </div>
+</section>
+
+<section class="sec" id="plan">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">FLOOR PLAN</p><h2>間取りで内覧</h2><p class="sec-lead">ピンをタップすると写真・動画・資料が開きます。</p></div>
+    <div class="plan-card">
+      <div class="plan-bar">
+        <div class="floor-tabs" role="tablist" aria-label="フロア"><button type="button" role="tab" data-floor="1" aria-selected="true">1F<small>写真24＋動画</small></button><button type="button" role="tab" data-floor="2" aria-selected="false" tabindex="-1">2F<small>写真17</small></button><button type="button" role="tab" data-floor="3" aria-selected="false" tabindex="-1">3F<small>写真7</small></button></div>
+        <div class="layers" aria-label="表示するピン">
+          <label><input type="checkbox" data-layer="photo" checked><span class="sw" style="background:var(--photo)"></span>写真</label>
+          <label><input type="checkbox" data-layer="video" checked><span class="sw" style="background:var(--video)"></span>動画</label>
+          <label><input type="checkbox" data-layer="doc" checked><span class="sw" style="background:var(--doc);border-radius:3px"></span>設備資料</label>
+        </div>
+      </div>
+      <div class="plan-stage">
+        <div class="compass" aria-hidden="true"><svg viewBox="0 0 26 26"><path d="M13 2l4 11h-8z" fill="#c25e37"/><path d="M13 24l-4-11h8z" fill="#b9b2a8"/><text x="13" y="11.5" font-size="6.5" font-weight="800" text-anchor="middle" fill="#fff" font-family="sans-serif">N</text></svg></div>
+        <div class="plan-floor" data-floor="1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 572 228" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif" text-anchor="middle" dominant-baseline="central" role="img" aria-label="1階の間取り図"><g class="rot" transform="translate(-10 -16)"><g id="f1-base"><rect x="24" y="38" width="144" height="182" fill="#fbf8f3" /><rect x="168" y="38" width="68" height="105" fill="#eaf1f5" /><rect x="236" y="38" width="92" height="74" fill="#eaf1f5" /><rect x="328" y="30" width="177" height="96" fill="#e9e8e4" /><rect x="362" y="125" width="143" height="38" fill="#f2f1ee" /><rect x="168" y="140" width="200" height="78" fill="#fbf8f3" /><rect x="368" y="164" width="64" height="54" fill="#e4e0d9" /><path d="M434,167H462V181H500V214H434Z" fill="#efe3cb"/><rect x="236" y="112" width="13" height="28" fill="#efe3cb" /><rect x="250" y="112" width="76" height="28" fill="#efe3cb" /><rect x="329" y="131" width="33" height="10" fill="#efe3cb" /><rect x="97" y="190" width="69" height="25" fill="#efe3cb" /><rect x="251" y="181" width="48" height="33" fill="#efe3cb" /><g fill="#34302c" transform="scale(0.25) translate(0.000000,1028.000000) scale(0.100000,-0.100000)"><path d="M12308 9053 l-3 -158 -1517 -3 -1518 -2 0 -89 0 -89 6 -16 6 -16 34 0 34 0 0 -805 0 -805 124 0 123 0 7 77 6 76 0 683 0 683 1670 1 1670 0 0 -215 0 -215 150 0 150 0 2 373 3 372 3574 3 3574 2 19 17 18 16 0 127 0 128 -16 6 -16 6 -4049 0 -4048 0 -3 -157z M790 8005 l0 -885 69 0 69 0 16 -6 16 -6 0 -419 0 -419 65 0 65 0 0 1160 0 1160 2748 -2 2747 -3 3 -2032 2 -2033 104 0 104 0 6 15 5 15 681 0 680 0 0 90 0 90 -225 0 -226 0 -5 15 -6 15 -59 0 -60 0 -24 -16 -24 -16 -53 6 -53 7 -64 5 -63 6 -11 -11 -11 -11 -238 0 -238 0 -2 1513 -1 1512 1 330 2 330 0 88 0 87 34 0 33 0 6 83 7 82 0 68 0 67 -3050 0 -3050 0 0 -885z M13040 6400 l0 -50 -45 0 -45 0 0 -190 0 -190 -1667 2 -1668 3 -3 53 -3 52 -130 0 -130 0 3 -147 3 -148 105 2 105 2 70 2 70 1 91 -8 91 -9 16 -13 15 -13 6 -52 7 -52 8 -180 8 -180 8 -17 7 -18 63 0 62 0 7 46 6 47 0 126 1 126 10 45 10 45 6 27 5 26 27 25 26 24 462 12 462 13 13 -8 13 -8 865 -1 865 0 37 -17 37 -17 7 -28 6 -28 9 -32 10 -32 5 -238 5 -238 0 -80 0 -80 -8 -112 -8 -111 -23 -31 -22 -30 0 -86 0 -86 123 3 122 3 3 218 2 217 68 0 68 0 10 9 9 9 55 5 55 6 130 12 130 12 155 -12 155 -11 100 6 100 6 95 -22 95 -22 33 -5 32 -5 0 -19 0 -18 17 -35 16 -35 -12 -128 -12 -128 3 -530 3 -530 288 -3 287 -2 0 150 0 149 -137 3 -138 3 -3 717 -2 718 -758 2 -757 3 -3 578 -2 577 -105 0 -105 0 0 -50z M790 5252 l0 -239 83 -9 82 -9 3 -407 2 -408 65 0 65 0 0 655 0 655 -150 0 -150 0 0 -238z M9940 5128 l-12 -33 -9 -140 -8 -140 -7 -36 -6 -37 -51 -5 -52 -5 -68 -12 -69 -12 -51 7 -52 6 -72 5 -73 6 0 -91 0 -91 535 0 535 0 0 90 0 90 -63 0 -64 0 -106 7 -107 6 0 9 0 8 -32 29 -33 30 3 170 4 171 -65 0 -65 0 -12 -32z M17882 3789 l3 -74 33 -3 32 -3 0 -53 0 -53 31 -7 32 -6 248 0 248 0 25 -11 25 -12 19 -41 20 -41 16 -54 16 -55 0 -127 0 -128 21 -35 20 -34 32 -12 32 -11 400 -5 400 -5 30 -5 30 -5 35 -29 35 -29 3 -572 4 -572 -26 -52 -26 -51 -53 -14 -52 -13 -130 2 -130 2 -39 10 -39 11 -213 -8 -214 -7 0 -148 0 -149 829 0 829 0 18 28 19 27 0 112 0 111 -8 9 -9 8 -126 5 -127 5 -3 1033 -2 1032 -45 0 -45 0 0 45 0 45 -245 0 -245 0 0 -235 0 -235 -93 0 -94 0 -76 -6 -77 -7 0 107 0 106 -40 0 -40 0 0 10 0 10 -65 0 -64 0 -3 -112 -3 -113 -72 -3 -73 -3 0 196 0 195 -45 0 -45 0 0 45 0 45 -362 0 -363 0 -98 7 -98 6 3 -74z M17190 3180 l0 -430 90 0 90 0 1 108 1 107 9 250 10 250 5 73 6 72 -106 0 -106 0 0 -430z M6590 3090 l0 -350 -21 0 -21 0 4 -117 3 -116 13 -5 12 -4 0 -23 0 -23 11 -4 10 -3 8 -35 7 -35 -2 -282 -2 -283 -16 -31 -16 -32 0 -24 0 -23 -43 0 -44 0 -7 -7 -7 -7 -1212 -1 -1212 -2 -57 10 -58 11 0 13 0 13 -10 0 -9 0 -17 32 -16 32 10 50 11 51 2 225 2 225 -8 98 -8 97 37 0 36 0 0 95 0 96 -127 -3 -128 -3 -5 -515 -5 -515 -1305 0 -1305 0 -3 853 -2 852 -150 0 -150 0 0 -960 0 -960 45 0 45 0 0 -45 0 -45 3020 0 3020 0 0 150 0 149 -55 3 -56 3 -2 873 -1 872 -108 0 -108 0 0 -350z M9197 3203 l-7 -6 0 -104 0 -103 358 -2 357 -3 0 -645 0 -645 -1257 -3 -1258 -2 0 -150 0 -150 3150 0 3150 0 0 150 0 150 -557 2 -558 3 -3 758 -2 757 -130 0 -130 0 0 -115 0 -115 15 0 15 0 0 -26 0 -26 17 -56 18 -57 -1 -430 0 -430 -8 -90 -8 -90 -9 -10 -9 -9 0 -27 0 -27 -47 -6 -48 -6 -1030 -3 -1030 -3 -23 10 -22 9 -20 33 -20 32 7 393 6 394 -11 50 -12 50 -2 130 -3 130 13 23 13 23 47 22 47 21 483 4 482 4 0 99 0 99 -983 0 -984 0 -6 -7z M16283 1763 l-42 -4 -3 -32 -3 -32 -1057 -3 -1058 -2 0 -150 0 -150 1825 0 1825 0 0 144 0 145 -137 4 -138 5 -36 7 -37 7 -5 27 -6 28 -197 6 -197 7 -346 -2 -346 -1 -42 -4z"/></g><rect x="20" y="79" width="7" height="41" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M22.6,79V120M24.4,79V120" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="20" y="132" width="7" height="40" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M22.6,132V172M24.4,132V172" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="172" y="35" width="60" height="6" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M172,37.1H232M172,38.9H232" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="324" y="53" width="7" height="43" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M326.6,53V96M328.4,53V96" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="342" y="215" width="11" height="7" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M342,217.6H353M342,219.4H353" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="444" y="215" width="25" height="7" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M444,217.6H469M444,219.4H469" fill="none" stroke="#9fb4c2" stroke-width=".7"/><path d="M167,171H141" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M141,171A26,26 0 0 1 167,145" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M233,141V115" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M233,115A26,26 0 0 0 207,141" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M237,104H262" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M237,79A25,25 0 0 1 262,104" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M430,213H405" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M430,188A25,25 0 0 0 405,213" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M174,222V234" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M174,234A12,12 0 0 0 186,222" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M368,161.5H420M368,164.5H420" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M420,161.5H448M420,164.5H448" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M366.5,166V214M369.5,166V214" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M420,125V161M431,125V161M331,125H503M503,34V125" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="239" y="41" width="86" height="67" fill="none" stroke="#34302c" stroke-width="1"/><rect x="295" y="46" width="27" height="58" fill="#ffffff" rx="5" stroke="#8a837a" stroke-width=".75"/><rect x="299.5" y="51" width="18" height="48" fill="none" rx="8" stroke="#8a837a" stroke-width=".6"/><circle cx="304" cy="75" r="1.3" fill="none" stroke="#8a837a" stroke-width=".6"/><rect x="285" y="70" width="6" height="12" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><rect x="257" y="44" width="32" height="4" fill="#ffffff" rx="1.5" stroke="#8a837a" stroke-width=".6"/><rect x="170" y="41" width="64" height="19" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M202,41V60" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="178" y="45" width="15" height="11" fill="none" rx="2.5" stroke="#8a837a" stroke-width=".7"/><rect x="210" y="45" width="15" height="11" fill="none" rx="2.5" stroke="#8a837a" stroke-width=".7"/><rect x="181.5" y="130" width="13" height="7" fill="#ffffff" rx="1.2" stroke="#8a837a" stroke-width=".7"/><ellipse cx="188" cy="121" rx="6.5" ry="8.5" fill="#ffffff" stroke="#8a837a" stroke-width=".7"/><rect x="170" y="179" width="78" height="35" fill="none" stroke="#8a837a" stroke-width=".75"/><path d="M195,179V214M204,179V214M213,179V214M222,179V214M231,179V214M240,179V214" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M186,183V197H243" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M247,197l-5,-2.6v5.2z" fill="#8a837a"/><path d="M258,112V140" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M263,140 l3,4.5 l3,-4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M313,140 l3,4.5 l3,-4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M103,190 l3,-4.5 l3,4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M152,190 l3,-4.5 l3,4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="283" y="189" width="16" height="21" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="300" y="183" width="9" height="23" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M436,177.5H462M480,182V213" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="472" y="158" width="18" height="15" fill="#ffffff" stroke="#8a837a" stroke-width=".7"/><rect x="28" y="43" width="39" height="15" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="347" y="54" width="142" height="50" fill="#ffffff" rx="15" stroke="#8a837a" stroke-width=".8"/><rect x="373" y="60" width="68" height="38" fill="none" rx="10" stroke="#8a837a" stroke-width=".6"/><path d="M441,62Q452,79 441,96M381,62Q373,79 381,96" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M434,54l2,-4h5l1,4M434,104l2,4h5l1,-4" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/></g><g class="lbls"><g class="lbl" data-x="96" data-y="110" transform="translate(96,110)"><g class="h"><text y="-4.55" font-size="10" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">防音室</text><text y="5.90" font-size="7" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約9.4帖</text></g></g><g class="lbl" data-x="206" data-y="95" data-rx="204" data-ry="103" transform="translate(206,95)"><g class="h"><text y="-4.03" font-size="7.2" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">洗面・トイレ</text><text y="4.25" font-size="6.2" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約2.9帖</text></g></g><g class="lbl" data-x="268" data-y="80" transform="translate(268,80)"><g class="h"><text y="0.00" font-size="8" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">浴室</text></g></g><g class="lbl" data-x="407" data-y="79" transform="translate(407,79)"><g class="h"><text y="0.00" font-size="7" font-weight="700" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ガレージ</text></g></g><g class="lbl" data-x="380" data-y="191" transform="translate(380,191)"><g class="h"><text y="0.00" font-size="7" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">玄関</text></g></g><g class="lbl" data-x="467" data-y="197" transform="translate(467,197)"><g class="h"><text y="-7.05" font-size="6" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">シューズ</text><text y="0.03" font-size="6" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">クローク</text><text y="7.08" font-size="5.4" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約1.2帖</text></g></g><g class="lbl" data-x="322" data-y="163" transform="translate(322,163)"><g class="h"><text y="0.00" font-size="7.4" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ホール</text></g></g><g class="lbl" data-x="290" data-y="127" transform="translate(290,127)"><g class="h"><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">収納</text></g></g><g class="lbl" data-x="345.5" data-y="136.5" transform="translate(345.5,136.5)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">収納</text></g></g><g class="lbl" data-x="242.5" data-y="126" transform="translate(242.5,126)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">棚</text></g></g><g class="lbl has-v" data-x="131" data-y="203" transform="translate(131,203)"><g class="h"><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">クローゼット</text></g><g class="v"><text y="-15.90" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ク</text><text y="-9.54" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ロ</text><text y="-3.18" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 -3.18)">ー</text><text y="3.18" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ゼ</text><text y="9.54" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ッ</text><text y="15.90" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ト</text></g></g><g class="lbl" data-x="266" data-y="195" transform="translate(266,195)"><g class="h"><text y="0.00" font-size="5.2" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">階段下収納</text></g></g><g class="lbl" data-x="291" data-y="200" transform="translate(291,200)"><g class="h"><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">床下</text></g></g><g class="lbl" data-x="481" data-y="165.5" transform="translate(481,165.5)"><g class="h"><text y="-2.48" font-size="4.2" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">宅配</text><text y="2.48" font-size="4.2" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">BOX</text></g></g><g class="lbl" data-x="47.5" data-y="50.5" transform="translate(47.5,50.5)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">AC</text></g></g><g class="lbl" data-x="226" data-y="186" transform="translate(226,186)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">UP</text></g></g></g></g></svg><div class="pins"></div></div><div class="plan-floor" data-floor="2" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 222" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif" text-anchor="middle" dominant-baseline="central" role="img" aria-label="2階の間取り図"><g class="rot" transform="translate(-68 -8)"><g id="f2-base"><path d="M150,27H366V19H505V206H150Z" fill="#fbf8f3"/><rect x="81" y="30" width="68" height="59" fill="#efe3cb" /><rect x="81" y="90" width="68" height="79" fill="#fbf8f3" /><rect x="81" y="173" width="68" height="34" fill="#f2f1ee" /><rect x="510" y="19" width="53" height="188" fill="#f2f1ee" /><rect x="153" y="172" width="68" height="35" fill="#efe3cb" /><rect x="221" y="31" width="62" height="17" fill="#efe3cb" /><rect x="290" y="31" width="68" height="17" fill="#efe3cb" /><rect x="290" y="66" width="82" height="95" fill="#cf7f4f" fill-opacity=".07" stroke="#cf7f4f" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="380" y="66" width="107" height="106" fill="#cf7f4f" fill-opacity=".07" stroke="#cf7f4f" stroke-width=".7" stroke-dasharray="2.2 1.6"/><g fill="#34302c" transform="scale(0.25) translate(0.000000,960.000000) scale(0.100000,-0.100000)"><path d="M14555 8958 l-5 -13 -2 -145 -3 -145 -1597 -3 -1598 -2 0 -170 0 -171 16 -23 15 -24 -4 -234 -3 -233 -14 -166 -13 -166 19 -34 20 -34 182 -3 182 -2 0 45 0 45 50 0 50 0 1 73 1 72 3 270 3 270 -10 53 -11 53 11 11 12 12 0 21 0 21 68 13 67 13 96 7 96 8 949 -3 949 -4 75 -10 75 -11 53 -6 52 -5 2 -2 2 -1 5 -470 6 -470 228 -3 227 -2 21 32 21 33 -6 163 -5 163 6 445 6 444 2546 -2 2546 -3 5 -715 5 -715 115 -5 115 -5 3 -32 3 -33 69 0 68 0 16 -6 16 -6 0 -929 0 -929 65 0 65 0 2 1688 3 1687 1078 3 1078 2 -3 148 -3 147 -4043 3 -4043 2 -4 -12z M3030 5566 l0 -3084 108 -7 107 -8 224 7 225 6 4 5 4 4 -7 160 -8 161 -181 2 -181 3 -3 255 -3 255 7 1273 6 1272 1307 -2 1306 -3 3 -212 2 -213 45 0 45 0 0 -20 0 -20 65 0 65 0 0 355 0 355 -65 0 -65 0 0 -10 0 -10 -71 0 -70 0 -22 -11 -21 -12 -726 -3 -725 -3 -335 1 -335 1 -171 1 -171 2 -36 27 -35 27 -18 52 -17 52 0 1026 -1 1025 7 20 7 20 47 30 47 30 1176 0 1175 0 54 -17 55 -18 88 0 88 0 0 -507 0 -508 7 -127 6 -128 64 0 64 0 -1 638 -2 637 1391 2 1391 1 32 11 31 11 58 0 59 0 0 140 0 140 -3050 0 -3050 0 0 -3084z M20188 3248 l-3 -33 -117 -3 -118 -3 -2 -877 -3 -877 -2402 -3 -2403 -2 0 -10 0 -10 -35 0 -35 0 0 10 0 10 -1040 0 -1040 0 0 -45 0 -45 -50 0 -50 0 0 45 0 45 -1650 0 -1650 0 0 -150 0 -150 6530 0 6530 0 0 105 0 105 -45 0 -45 0 0 45 0 45 -1032 2 -1033 3 -3 913 -2 912 -149 0 -150 0 -3 -32z M6040 2925 l0 -45 -44 0 -45 0 -3 -37 -3 -38 -137 4 -137 4 -3 -79 -3 -79 -484 -3 -484 -2 -14 -11 -13 -11 0 -80 0 -80 573 3 572 3 12 -7 11 -7 -5 -278 -6 -277 8 -377 7 -378 1644 0 1644 0 0 150 0 150 -39 0 -39 0 -3 730 -4 731 -15 9 -15 10 -112 0 -113 0 0 -105 0 -104 13 -8 13 -8 12 -95 12 -95 0 -225 0 -225 -4 -155 -3 -155 -8 -147 -8 -148 -9 0 -9 0 -21 -20 -22 -20 -35 -6 -35 -7 -236 12 -235 11 -185 0 -185 0 -105 -10 -105 -10 -140 -2 -140 -2 -568 11 -569 12 -22 15 -23 14 -12 34 -13 33 -10 20 -9 21 5 552 5 552 15 22 16 22 0 128 0 128 -65 0 -65 0 0 -45z M11522 2823 l3 -108 1635 3 1635 4 7 4 8 5 0 100 0 99 -1645 0 -1646 0 3 -107z"/></g><rect x="228" y="24" width="56" height="6" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M228,26.1H284M228,27.9H284" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="499" y="59" width="11" height="101" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M503.6,59V160M505.4,59V160" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="92" y="167" width="50" height="7" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M92,169.6H142M92,171.4H142" fill="none" stroke="#9fb4c2" stroke-width=".7"/><path d="M229,211V223" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M229,223A11,11 0 0 0 240,212" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M150,31V58" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M150,58V88M150,104V168" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M96,43H148M96,31V88" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="153" y="31" width="21" height="20" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="221" y="31" width="62" height="17" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="290" y="31" width="68" height="17" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="180" y="91" width="102" height="36" fill="#ffffff" rx="1.5" stroke="#8a837a" stroke-width=".8"/><rect x="190" y="96" width="25" height="15" fill="none" rx="1" stroke="#8a837a" stroke-width=".7"/><circle cx="197" cy="101" r="2.6" fill="none" stroke="#8a837a" stroke-width=".6"/><circle cx="208" cy="101" r="2.6" fill="none" stroke="#8a837a" stroke-width=".6"/><circle cx="202.5" cy="107.5" r="2.2" fill="none" stroke="#8a837a" stroke-width=".6"/><rect x="243" y="96" width="27" height="14" fill="none" rx="3" stroke="#8a837a" stroke-width=".7"/><circle cx="252" cy="112.5" r="1.1" fill="#8a837a"/><circle cx="262" cy="112.5" r="1.1" fill="#8a837a"/><path d="M369,40H497" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M283,106H357M283,111H357" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="481" y="162" width="15" height="38" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="84" y="133" width="14" height="36" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M101,92V168" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="157" y="181" width="19" height="24" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M176,190H220" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M158,172 l3,-4.5 l3,4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M211,172 l3,-4.5 l3,4.5" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M553,22V204M558,22V204" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M225,170H287" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="287" y="167" width="82" height="4" fill="#d8d3cb" /><path d="M259,170V204M268,170V204M277,170V204M286,170V204M295,170V204M304,170V204M313,170V204M322,170V204M331,170V204M340,170V204M349,170V204M358,170V204M367,170V204" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M242,172V186H315" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M319,186l-5,-2.6v5.2z" fill="#8a837a"/><path d="M366,186H332" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M328,186l5,-2.6v5.2z" fill="#8a837a"/><path d="M321,171V180L317,184L325,190L321,194V204" fill="none" stroke="#8a837a" stroke-width=".9"/></g><g class="lbls"><g class="lbl" data-x="433" data-y="118" transform="translate(433,118)"><g class="h"><text y="-4.81" font-size="11" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">LDK</text><text y="6.49" font-size="7.4" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約22.4帖</text></g></g><g class="lbl" data-x="231" data-y="143" transform="translate(231,143)"><g class="h"><text y="0.00" font-size="7.4" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">キッチン</text></g></g><g class="lbl" data-x="331" data-y="73" transform="translate(331,73)"><g class="h"><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">床暖房</text></g></g><g class="lbl" data-x="433" data-y="73" transform="translate(433,73)"><g class="h"><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">床暖房</text></g></g><g class="lbl has-v" data-x="433" data-y="33" transform="translate(433,33)"><g class="h"><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">TVボード</text></g><g class="v"><text y="-11.45" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">T</text><text y="-5.72" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">V</text><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ボ</text><text y="5.72" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 5.72)">ー</text><text y="11.45" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ド</text></g></g><g class="lbl has-v" data-x="324" data-y="39.5" transform="translate(324,39.5)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">スタディコーナー</text></g><g class="v"><text y="-18.55" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ス</text><text y="-13.25" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">タ</text><text y="-7.95" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">デ</text><text y="-2.65" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ィ</text><text y="2.65" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">コ</text><text y="7.95" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 7.95)">ー</text><text y="13.25" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ナ</text><text y="18.55" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 18.55)">ー</text></g></g><g class="lbl has-v" data-x="252" data-y="39.5" transform="translate(252,39.5)"><g class="h"><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">吊戸棚</text></g><g class="v"><text y="-5.72" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">吊</text><text y="0.00" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">戸</text><text y="5.72" font-size="5.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">棚</text></g></g><g class="lbl" data-x="163.5" data-y="41" transform="translate(163.5,41)"><g class="h"><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">冷蔵庫</text></g></g><g class="lbl has-v" data-x="320" data-y="118" transform="translate(320,118)"><g class="h"><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ライティングレール</text></g><g class="v"><text y="-18.66" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ラ</text><text y="-13.99" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">イ</text><text y="-9.33" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">テ</text><text y="-4.66" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ィ</text><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ン</text><text y="4.66" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">グ</text><text y="9.33" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">レ</text><text y="13.99" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 13.99)">ー</text><text y="18.66" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ル</text></g></g><g class="lbl" data-x="122" data-y="74" data-rx="106" data-ry="62" transform="translate(122,74)"><g class="h"><text y="-4.03" font-size="6.6" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">パントリー</text><text y="3.89" font-size="6.2" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約1.7帖</text></g></g><g class="lbl has-v" data-x="122" data-y="37.5" transform="translate(122,37.5)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">可動棚</text></g><g class="v"><text y="-4.88" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">可</text><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">動</text><text y="4.88" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">棚</text></g></g><g class="lbl" data-x="125" data-y="128" transform="translate(125,128)"><g class="h"><text y="-4.03" font-size="6.4" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ワークスペース</text><text y="3.78" font-size="6.2" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約2.3帖</text></g></g><g class="lbl has-v" data-x="115" data-y="191" transform="translate(115,191)"><g class="h"><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">バルコニー</text></g><g class="v"><text y="-12.72" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">バ</text><text y="-6.36" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ル</text><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">コ</text><text y="6.36" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ニ</text><text y="12.72" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 12.72)">ー</text></g></g><g class="lbl" data-x="535" data-y="96" transform="translate(535,96)"><g class="h"><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">バルコニー</text></g></g><g class="lbl" data-x="166.5" data-y="193" transform="translate(166.5,193)"><g class="h"><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">洗濯機</text></g></g><g class="lbl" data-x="199" data-y="199" transform="translate(199,199)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">可動棚</text></g></g><g class="lbl" data-x="91" data-y="151" transform="translate(91,151)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">AC</text></g></g><g class="lbl" data-x="488.5" data-y="181" transform="translate(488.5,181)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">AC</text></g></g><g class="lbl" data-x="240" data-y="165" transform="translate(240,165)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">UP</text></g></g><g class="lbl" data-x="356" data-y="197" transform="translate(356,197)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">DN</text></g></g></g></g></svg><div class="pins"></div></div><div class="plan-floor" data-floor="3" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 216" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif" text-anchor="middle" dominant-baseline="central" role="img" aria-label="3階の間取り図"><g class="rot" transform="translate(-125 -46)"><g id="f3-base"><rect x="163" y="67" width="68" height="136" fill="#fbf8f3" /><path d="M235,82H327V172H347V203H235Z" fill="#fbf8f3"/><rect x="281" y="66" width="46" height="16" fill="#fbf8f3" /><rect x="415" y="66" width="63" height="16" fill="#fbf8f3" /><rect x="333" y="82" width="48" height="35" fill="#eaf1f5" /><rect x="333" y="117" width="48" height="123" fill="#fbf8f3" /><rect x="385" y="82" width="120" height="138" fill="#fbf8f3" /><rect x="386" y="220" width="119" height="20" fill="#efe3cb" /><rect x="207" y="208" width="141" height="32" fill="#fbf8f3" /><rect x="512" y="58" width="26" height="186" fill="#f2f1ee" /><g fill="#34302c" transform="scale(0.25) translate(0.000000,1080.000000) scale(0.100000,-0.100000)"><path d="M5373 8323 l-13 -5 0 -113 0 -113 15 -28 15 -29 440 -5 440 -5 1 -2295 2 -2295 -21 -3 -22 -3 0 -149 0 -149 18 -10 17 -10 5 -344 5 -344 14 -16 13 -17 862 -2 861 -3 3 -607 2 -608 -518 0 -519 0 -181 -7 -182 -6 0 -144 0 -144 10 -19 10 -18 4035 -1 4035 -2 0 169 0 169 -2297 -2 -2298 -3 -898 6 -897 5 2 646 3 646 2813 3 2812 2 0 45 0 45 45 0 45 0 0 105 0 105 -110 0 -110 0 0 -40 0 -40 -3610 2 -3610 3 0 2664 0 2665 7 5 8 6 1303 -3 1302 -2 0 -300 0 -300 990 0 990 0 0 214 0 215 15 14 14 15 7 154 7 155 -63 6 -63 7 -69 0 -69 0 -39 -20 -40 -20 -2 -218 -3 -217 -685 0 -685 0 -3 298 -2 297 -2073 -1 -2072 -1 -12 -5z M13080 8047 l0 -165 15 -6 15 -5 0 -1985 0 -1985 16 -15 15 -16 345 0 344 0 0 -55 0 -55 110 0 110 0 -2 163 -3 162 -355 5 -355 5 -3 895 -2 895 5 23 5 22 375 0 374 0 6 10 6 10 25 0 24 0 0 90 0 90 -407 2 -408 3 0 645 0 645 538 3 537 2 0 150 0 150 -497 2 -498 3 -5 227 -5 226 -8 9 -9 8 -154 3 -154 3 0 -164z M16378 8203 l-98 -4 -2 -2 -2 -2 -6 -230 -5 -230 -671 -3 -671 -2 -6 -83 -7 -82 0 -67 0 -68 181 -2 182 -3 -1 -395 -1 -395 0 -248 -1 -249 -20 -5 -20 -5 0 -589 0 -589 20 0 20 0 0 -1035 0 -1035 65 0 65 0 0 595 0 595 45 0 45 0 2 1678 3 1677 538 3 537 2 0 233 0 233 11 11 10 10 6 147 6 146 -64 -2 -64 -2 -97 -3z M19144 8203 l-21 -4 -7 -91 -6 -91 0 -211 0 -211 7 -82 6 -83 511 -2 511 -3 3 -871 2 -871 76 -6 76 -7 9 -6 9 -5 0 -645 0 -644 65 0 64 0 3 1613 3 1612 -3 67 -4 68 -501 2 -501 3 -1 213 0 214 -28 24 -28 24 -112 -1 -112 -2 -21 -4z M9230 5105 l0 -1295 90 0 90 0 0 1295 0 1295 -90 0 -90 0 0 -1295z M20148 2648 l-3 -513 -117 -3 -118 -3 0 -64 0 -65 45 0 45 0 0 -30 0 -29 40 -11 39 -11 6 -9 6 -10 23 0 23 0 9 -42 9 -43 -2 -255 -2 -255 -6 -61 -6 -62 -27 -5 -27 -5 -55 -21 -55 -22 -1980 3 -1980 2 -85 -1 -85 -1 -110 -3 -110 -3 -35 22 -35 22 -22 0 -23 0 -14 35 -15 35 -13 185 -12 184 -26 3 -25 3 -3 28 -3 27 -64 0 -65 0 -2 -252 -3 -253 -37 -3 -38 -3 0 -158 0 -158 98 -5 97 -5 2527 2 2527 1 4 4 5 5 3 675 2 675 -1 483 -2 482 -150 0 -150 0 -2 -512z"/></g><rect x="281" y="65" width="46" height="5" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M281,66.6H327M281,68.4H327" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="415" y="65" width="63" height="5" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M415,66.6H478M415,68.4H478" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="360" y="77" width="13" height="5" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M360,78.6H373M360,80.4H373" fill="none" stroke="#9fb4c2" stroke-width=".7"/><rect x="505" y="128" width="5" height="63" fill="#ffffff" stroke="#8a837a" stroke-width=".6"/><path d="M506.6,128V191M508.4,128V191" fill="none" stroke="#9fb4c2" stroke-width=".7"/><path d="M381,118V144" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M355,118A26,26 0 0 0 381,144" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M347,201V176" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M347,176A25,25 0 0 0 322,201" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M369,245V257" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M369,257A11,11 0 0 0 380,246" fill="none" stroke="#8a837a" stroke-width=".6" stroke-dasharray="1.4 1"/><path d="M382.2,198V216M384.8,210V228" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M231.5,84V110M234.5,84V110M231.5,174.5V203M234.5,174.5V203" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="334" y="93" width="6" height="13" fill="#ffffff" rx="1" stroke="#8a837a" stroke-width=".7"/><ellipse cx="348" cy="99.5" rx="8.5" ry="6.2" fill="#ffffff" stroke="#8a837a" stroke-width=".7"/><rect x="333" y="121" width="19" height="45" fill="#ffffff" stroke="#8a837a" stroke-width=".7"/><rect x="337" y="132" width="11" height="15" fill="none" rx="2.5" stroke="#8a837a" stroke-width=".7"/><rect x="312" y="85" width="15" height="33" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="390" y="87" width="32" height="14" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M392,220q4,-5 8,0q4,-5 8,0q4,-5 8,0q4,-5 8,0M478,220q4,-5 8,0q4,-5 8,0q4,-5 8,0" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><rect x="512" y="58" width="26" height="186" fill="none" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><path d="M512,58L538,244M538,58L512,244" fill="none" stroke="#8a837a" stroke-width=".7" stroke-dasharray="2.2 1.6"/><rect x="207" y="208" width="141" height="32" fill="none" stroke="#8a837a" stroke-width=".75"/><path d="M240,208V240M249,208V240M258,208V240M267,208V240M276,208V240M285,208V240M294,208V240M303,208V240M312,208V240M321,208V240M330,208V240M339,208V240M348,208V240" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M347,224H245" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M241,224l5,-2.6v5.2z" fill="#8a837a"/><path d="M135,62L147.5,148L141,154L149,154L166,247" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/><path d="M238,62.5H344V56.5H548V62" fill="none" stroke="#8a837a" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/></g><g class="lbls"><g class="lbl" data-x="446" data-y="150" transform="translate(446,150)"><g class="h"><text y="-4.55" font-size="10" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">洋室</text><text y="5.90" font-size="7" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約6.6帖</text></g></g><g class="lbl" data-x="281" data-y="138" transform="translate(281,138)"><g class="h"><text y="-4.55" font-size="10" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">洋室</text><text y="5.90" font-size="7" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約5.0帖</text></g></g><g class="lbl" data-x="197" data-y="130" transform="translate(197,130)"><g class="h"><text y="-4.29" font-size="9" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">納戸</text><text y="5.31" font-size="6.6" font-weight="500" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">約4.0帖</text></g></g><g class="lbl" data-x="367" data-y="92" transform="translate(367,92)"><g class="h"><text y="0.00" font-size="6.4" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">トイレ</text></g></g><g class="lbl" data-x="366" data-y="200" transform="translate(366,200)"><g class="h"><text y="0.00" font-size="7" font-weight="700" fill="#2a2622" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ホール</text></g></g><g class="lbl" data-x="342.5" data-y="158" transform="translate(342.5,158)"><g class="h"><text y="0.00" font-size="4.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">手洗い</text></g></g><g class="lbl has-v" data-x="446" data-y="231" transform="translate(446,231)"><g class="h"><text y="0.00" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">クローゼット</text></g><g class="v"><text y="-15.90" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ク</text><text y="-9.54" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ロ</text><text y="-3.18" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" transform="rotate(90 0 -3.18)">ー</text><text y="3.18" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ゼ</text><text y="9.54" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ッ</text><text y="15.90" font-size="6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">ト</text></g></g><g class="lbl" data-x="525" data-y="150" transform="translate(525,150)"><g class="h"><text y="0.00" font-size="6.4" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">吹抜</text></g></g><g class="lbl" data-x="304" data-y="75" transform="translate(304,75)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">出窓</text></g></g><g class="lbl" data-x="446.5" data-y="75" transform="translate(446.5,75)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">出窓</text></g></g><g class="lbl" data-x="319.5" data-y="101.5" transform="translate(319.5,101.5)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">AC</text></g></g><g class="lbl" data-x="406" data-y="94.5" transform="translate(406,94.5)"><g class="h"><text y="0.00" font-size="4.6" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">AC</text></g></g><g class="lbl" data-x="361" data-y="226" transform="translate(361,226)"><g class="h"><text y="0.00" font-size="5" font-weight="600" fill="#6f675e" paint-order="stroke" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">DN</text></g></g></g></g></svg><div class="pins"></div></div>
+      </div>
+      <div class="plan-foot">
+        <ul class="summary" data-floor="1"><li>ビルトインガレージ</li><li>玄関・シューズクローク（約1.2帖）</li><li>防音室（約9.4帖）</li><li>洗面・トイレ（約2.9帖）</li><li>浴室（1620サイズ）</li></ul><ul class="summary" data-floor="2" hidden><li>LDK（約22.4帖・床暖房）</li><li>パントリー（約1.7帖）</li><li>ワークスペース（約2.3帖）</li><li>洗濯機置場</li><li>バルコニー×2</li></ul><ul class="summary" data-floor="3" hidden><li>洋室（約6.6帖）</li><li>洋室（約5.0帖）</li><li>納戸（約4.0帖）</li><li>トイレ・手洗い</li><li>吹抜</li></ul>
+        <div class="strip-h"><span id="strip-title"></span><a href="#gallery">すべての写真</a></div>
+        <div class="strip" id="strip"></div>
+        <p class="hint">※ 図面は掲載用に作成したものです。スマートフォンでは北が上になるよう回転して表示しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">PHOTO GALLERY</p><h2>写真ギャラリー</h2><p class="sec-lead">玄関から順に、歩いて見て回る順番で並べています。</p></div>
+    <nav class="chips" aria-label="写真のカテゴリ"><a href="#g0">外観・ガレージ</a><a href="#g1">玄関・ホール</a><a href="#g2">防音室</a><a href="#g3">洗面・浴室</a><a href="#g4">LDK</a><a href="#g5">キッチン・パントリー</a><a href="#g6">ワークスペース・洗濯機置場</a><a href="#g7">3階 洋室・納戸</a></nav>
+    <div class="g-sec" id="g0"><h3>外観・ガレージ<small>5</small></h3><div class="grid"><button type="button" class="g-item" data-i="0" aria-label="外観"><img src="img/0-t.webp" alt="外観" loading="lazy" decoding="async" width="291" height="520"></button><button type="button" class="g-item" data-i="1" aria-label="外観（正面）"><img src="img/1-t.webp" alt="外観（正面）" loading="lazy" decoding="async" width="333" height="520"></button><button type="button" class="g-item" data-i="2" aria-label="外観・前面道路"><img src="img/2-t.webp" alt="外観・前面道路" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="3" aria-label="ビルトインガレージ"><img src="img/3-t.webp" alt="ビルトインガレージ" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="4" aria-label="アプローチ・宅配ボックス"><img src="img/4-t.webp" alt="アプローチ・宅配ボックス" loading="lazy" decoding="async" width="390" height="520"></button></div></div><div class="g-sec" id="g1"><h3>玄関・ホール<small>10</small></h3><div class="grid"><button type="button" class="g-item" data-i="5" aria-label="玄関ドア"><img src="img/5-t.webp" alt="玄関ドア" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="6" aria-label="玄関"><img src="img/6-t.webp" alt="玄関" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="7" aria-label="玄関・収納"><img src="img/7-t.webp" alt="玄関・収納" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="8" aria-label="シューズクローク"><img src="img/8-t.webp" alt="シューズクローク" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="9" aria-label="シューズクローク（可動棚）"><img src="img/9-t.webp" alt="シューズクローク（可動棚）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="10" aria-label="ホール収納（ハンガーパイプ）"><img src="img/11-t.webp" alt="ホール収納（ハンガーパイプ）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="11" aria-label="ホール収納（可動棚）"><img src="img/10-t.webp" alt="ホール収納（可動棚）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="12" aria-label="1階ホール"><img src="img/12-t.webp" alt="1階ホール" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="13" aria-label="階段下収納"><img src="img/13-t.webp" alt="階段下収納" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="14" aria-label="階段（1階→2階）"><img src="img/23-t.webp" alt="階段（1階→2階）" loading="lazy" decoding="async" width="390" height="520"></button></div></div><div class="g-sec" id="g2"><h3>防音室<small>3</small></h3><div class="grid"><button type="button" class="g-item" data-i="15" aria-label="防音室"><img src="img/21-t.webp" alt="防音室" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="16" aria-label="防音室"><img src="img/22-t.webp" alt="防音室" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="17" aria-label="防音室"><img src="img/20-t.webp" alt="防音室" loading="lazy" decoding="async" width="390" height="520"></button></div></div><div class="g-sec" id="g3"><h3>洗面・浴室<small>7</small></h3><div class="grid"><button type="button" class="g-item" data-i="18" aria-label="洗面化粧台（ダブルボウル）"><img src="img/15-t.webp" alt="洗面化粧台（ダブルボウル）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="19" aria-label="洗面・トイレ"><img src="img/14-t.webp" alt="洗面・トイレ" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="20" aria-label="洗面・トイレ"><img src="img/16-t.webp" alt="洗面・トイレ" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="21" aria-label="浴室（浴室テレビ）"><img src="img/17-t.webp" alt="浴室（浴室テレビ）" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="22" aria-label="浴室（動画）"><img src="media/bath-poster.webp" alt="" loading="lazy" decoding="async" width="360" height="640"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="vt">0:17</span></button><button type="button" class="g-item" data-i="23" aria-label="浴室（浴槽）"><img src="img/19-t.webp" alt="浴室（浴槽）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="24" aria-label="浴室"><img src="img/18-t.webp" alt="浴室" loading="lazy" decoding="async" width="390" height="520"></button></div></div><div class="g-sec" id="g4"><h3>LDK<small>7</small></h3><div class="grid"><button type="button" class="g-item" data-i="25" aria-label="LDK"><img src="img/25-t.webp" alt="LDK" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="26" aria-label="リビング（バルコニー方向）"><img src="img/27-t.webp" alt="リビング（バルコニー方向）" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="27" aria-label="LDK（キッチン方向）"><img src="img/26-t.webp" alt="LDK（キッチン方向）" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="28" aria-label="ダイニング・ライティングレール"><img src="img/29-t.webp" alt="ダイニング・ライティングレール" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="29" aria-label="スタディコーナー・壁面収納"><img src="img/30-t.webp" alt="スタディコーナー・壁面収納" loading="lazy" decoding="async" width="520" height="390"></button><button type="button" class="g-item" data-i="30" aria-label="バルコニー"><img src="img/28-t.webp" alt="バルコニー" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="31" aria-label="階段"><img src="img/24-t.webp" alt="階段" loading="lazy" decoding="async" width="465" height="520"></button></div></div><div class="g-sec" id="g5"><h3>キッチン・パントリー<small>7</small></h3><div class="grid"><button type="button" class="g-item" data-i="32" aria-label="アイランドキッチン"><img src="img/31-t.webp" alt="アイランドキッチン" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="33" aria-label="キッチン"><img src="img/32-t.webp" alt="キッチン" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="34" aria-label="キッチン（タッチレス水栓2基）"><img src="img/34-t.webp" alt="キッチン（タッチレス水栓2基）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="35" aria-label="キッチン（3口コンロ）"><img src="img/35-t.webp" alt="キッチン（3口コンロ）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="36" aria-label="キッチン背面・冷蔵庫スペース"><img src="img/33-t.webp" alt="キッチン背面・冷蔵庫スペース" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="37" aria-label="パントリー"><img src="img/36-t.webp" alt="パントリー" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="38" aria-label="パントリー（可動棚）"><img src="img/37-t.webp" alt="パントリー（可動棚）" loading="lazy" decoding="async" width="520" height="389"></button></div></div><div class="g-sec" id="g6"><h3>ワークスペース・洗濯機置場<small>2</small></h3><div class="grid"><button type="button" class="g-item" data-i="39" aria-label="ワークスペース"><img src="img/39-t.webp" alt="ワークスペース" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="40" aria-label="洗濯機置場"><img src="img/38-t.webp" alt="洗濯機置場" loading="lazy" decoding="async" width="390" height="520"></button></div></div><div class="g-sec" id="g7"><h3>3階 洋室・納戸<small>8</small></h3><div class="grid"><button type="button" class="g-item" data-i="41" aria-label="階段（2階→3階）"><img src="img/40-t.webp" alt="階段（2階→3階）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="42" aria-label="3階ホール・手洗い"><img src="img/41-t.webp" alt="3階ホール・手洗い" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="43" aria-label="トイレ（3階）"><img src="img/42-t.webp" alt="トイレ（3階）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="44" aria-label="洋室（約6.6帖）"><img src="img/44-t.webp" alt="洋室（約6.6帖）" loading="lazy" decoding="async" width="392" height="520"></button><button type="button" class="g-item" data-i="45" aria-label="洋室（約6.6帖）"><img src="img/43-t.webp" alt="洋室（約6.6帖）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="46" aria-label="洋室（約5.0帖）"><img src="img/45-t.webp" alt="洋室（約5.0帖）" loading="lazy" decoding="async" width="520" height="389"></button><button type="button" class="g-item" data-i="47" aria-label="洋室（約5.0帖）"><img src="img/46-t.webp" alt="洋室（約5.0帖）" loading="lazy" decoding="async" width="390" height="520"></button><button type="button" class="g-item" data-i="48" aria-label="納戸（約4.0帖）"><img src="img/47-t.webp" alt="納戸（約4.0帖）" loading="lazy" decoding="async" width="390" height="520"></button></div></div>
+  </div>
+</section>
+
+<section class="sec" id="video">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">MOVIE</p><h2>動画</h2></div>
+    <figure class="video-card" style="margin:0 auto">
+      <video controls playsinline preload="none" poster="media/bath-poster.webp" width="720" height="1280"><source src="media/bath.mp4" type="video/mp4"></video>
+      <p>浴室（約17秒）｜浴室テレビ・浴槽の様子</p>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="docs">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">EQUIPMENT</p><h2>設備・仕様資料</h2><p class="sec-lead">採用設備のメーカー資料です（PDF）。</p></div>
+    <div class="doc-group"><h3>1階</h3><ul class="docs"><li><a class="doc" href="docs/smart-key.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>玄関ドア スマートコントロールキー</b><span>LIXIL ／ ボタン・カード・リモコンで施解錠</span><em>玄関 ・ 1ページ ・ 318KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/delivery-box.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>宅配ボックス付き機能門柱</b><span>不在時も荷物を受け取れます</span><em>アプローチ ・ 1ページ ・ 112KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/storage-examples.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>収納のコーディネート実例</b><span>DAIKEN「収育スタイリング」</span><em>玄関・パントリー ・ 1ページ ・ 270KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/soundproof-room-catalog.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>防音室 総合カタログ<span class="badge">大容量</span></b><span>DAIKEN「サウンドデザイン」</span><em>防音室 ・ 172ページ ・ 43.4MB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/air-conditioner-manual.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>ルームエアコン 取扱説明書</b><span>三菱電機 霧ヶ峰</span><em>防音室 ・ 10ページ ・ 1.8MB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/bathroom-spage.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>システムバス 仕様</b><span>LIXIL「SPAGE（スパージュ）」</span><em>浴室 ・ 1ページ ・ 511KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/vanity.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>洗面化粧台 仕様</b><span>LIXIL（INAX）</span><em>洗面 ・ 1ページ ・ 536KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/toilet-satis.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>トイレ 製品資料</b><span>LIXIL「サティス Sタイプ」</span><em>洗面・トイレ ・ 4ページ ・ 518KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li></ul></div><div class="doc-group"><h3>2階</h3><ul class="docs"><li><a class="doc" href="docs/louver-catalog.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>外観ルーバー カタログ</b><span>「コートラインⅡ」</span><em>バルコニー ・ 76ページ ・ 7.5MB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/video-doorphone.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>テレビドアホン</b><span>Panasonic VL-SWD505KS ／ スマホで来客対応</span><em>LDK ・ 2ページ ・ 1.1MB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/lighting-plan.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>照明計画図</b><span>全フロアの照明プラン</span><em>LDK ・ 2ページ ・ 783KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/misel-catalog.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>壁面収納 カタログ</b><span>DAIKEN「MiSEL（ミセル）」</span><em>LDK ・ 2ページ ・ 106KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/tv-board.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>収納TVボード 資料</b><span>DAIKEN「MiSEL」</span><em>LDK ・ 1ページ ・ 4.7MB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/kitchen.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>システムキッチン 仕様</b><span>タカラスタンダード ／ LIXIL 自動水栓ナビッシュ×2</span><em>キッチン ・ 1ページ ・ 350KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li><li><a class="doc" href="docs/tv-board-examples.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span class="doc-t"><b>TVボードのコーディネート実例</b><span>DAIKEN「収育スタイリング」</span><em>LDK ・ 1ページ ・ 260KB</em></span><svg class="doc-go" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg></a></li></ul></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <ul>
+      <li>間取り図は掲載用に作成したもので、現況と異なる場合は現況を優先します。帖数は目安です。</li>
+      <li>写真は撮影時のもので、家具・車両等は含まれません。</li>
+      <li>設備資料はメーカーのカタログ・仕様書です。実際の仕様・品番と異なる場合があります。</li>
+    </ul>
+    <p>世田谷1丁目住宅 Web内覧</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真ビューア" hidden>
+  <div class="lb-top"><span class="lb-count" id="lb-count"></span><button class="lb-x" type="button" id="lb-close" aria-label="閉じる"><svg viewBox="0 0 24 24"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button></div>
+  <div class="lb-stage" id="lb-stage">
+    <div class="lb-spin"></div>
+    <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="前へ"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
+    <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="次へ"><svg viewBox="0 0 24 24"><path d="M10 6 8.6 7.4 13.2 12l-4.6 4.6L10 18l6-6z"/></svg></button>
+  </div>
+  <div class="lb-info">
+    <button class="lb-mini" type="button" id="lb-mini" aria-label="間取りで位置を見る"></button>
+    <div class="lb-txt"><p class="lb-sec" id="lb-sec"></p><h3 class="lb-title" id="lb-title"></h3><button class="lb-loc" type="button" id="lb-loc">間取りで位置を見る</button></div>
+  </div>
+</div>
+
+<dialog class="sheet" id="sheet">
+  <div class="sheet-in">
+    <p class="eyebrow" id="sh-area"></p>
+    <h3 id="sh-name"></h3>
+    <p id="sh-note"></p>
+    <p id="sh-meta"></p>
+    <p class="warn" id="sh-warn" hidden>ファイルサイズが大きいため、Wi-Fi環境での閲覧をおすすめします。</p>
+    <div class="sheet-act"><button class="btn btn-line" type="button" id="sh-close">閉じる</button><a class="btn btn-dark" id="sh-open" href="#" target="_blank" rel="noopener">PDFを開く</a></div>
+  </div>
+</dialog>
+
+<script>
+const DATA = {"items":[{"type":"photo","id":0,"f":1,"x":565.7,"y":45.5,"t":"外観","sec":"外観・ガレージ","w":896,"h":1600,"large":"img/0-l.webp","thumb":"img/0-t.webp"},{"type":"photo","id":1,"f":1,"x":561.0,"y":123.4,"t":"外観（正面）","sec":"外観・ガレージ","w":1026,"h":1600,"large":"img/1-l.webp","thumb":"img/1-t.webp"},{"type":"photo","id":2,"f":1,"x":562.8,"y":211.8,"t":"外観・前面道路","sec":"外観・ガレージ","w":1000,"h":749,"large":"img/2-l.webp","thumb":"img/2-t.webp"},{"type":"photo","id":3,"f":1,"x":523.6,"y":107.4,"t":"ビルトインガレージ","sec":"外観・ガレージ","w":1086,"h":1448,"large":"img/3-l.webp","thumb":"img/3-t.webp"},{"type":"photo","id":4,"f":1,"x":476.8,"y":114.6,"t":"アプローチ・宅配ボックス","sec":"外観・ガレージ","w":1109,"h":1479,"large":"img/4-l.webp","thumb":"img/4-t.webp"},{"type":"photo","id":5,"f":1,"x":391.4,"y":118.0,"t":"玄関ドア","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/5-l.webp","thumb":"img/5-t.webp"},{"type":"photo","id":6,"f":1,"x":395.5,"y":134.9,"t":"玄関","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/6-l.webp","thumb":"img/6-t.webp"},{"type":"photo","id":7,"f":1,"x":391.4,"y":176.0,"t":"玄関・収納","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/7-l.webp","thumb":"img/7-t.webp"},{"type":"photo","id":8,"f":1,"x":394.9,"y":204.6,"t":"シューズクローク","sec":"玄関・ホール","w":1000,"h":1333,"large":"img/8-l.webp","thumb":"img/8-t.webp"},{"type":"photo","id":9,"f":1,"x":420.6,"y":205.3,"t":"シューズクローク（可動棚）","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/9-l.webp","thumb":"img/9-t.webp"},{"type":"photo","id":11,"f":1,"x":299.5,"y":154.2,"t":"ホール収納（ハンガーパイプ）","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/11-l.webp","thumb":"img/11-t.webp"},{"type":"photo","id":10,"f":1,"x":344.0,"y":178.4,"t":"ホール収納（可動棚）","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/10-l.webp","thumb":"img/10-t.webp"},{"type":"photo","id":12,"f":1,"x":342.2,"y":200.5,"t":"1階ホール","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/12-l.webp","thumb":"img/12-t.webp"},{"type":"photo","id":13,"f":1,"x":286.1,"y":168.8,"t":"階段下収納","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/13-l.webp","thumb":"img/13-t.webp"},{"type":"photo","id":23,"f":1,"x":180.8,"y":198.7,"t":"階段（1階→2階）","sec":"玄関・ホール","w":1109,"h":1479,"large":"img/23-l.webp","thumb":"img/23-t.webp"},{"type":"photo","id":21,"f":1,"x":141.6,"y":64.8,"t":"防音室","sec":"防音室","w":1109,"h":1479,"large":"img/21-l.webp","thumb":"img/21-t.webp"},{"type":"photo","id":22,"f":1,"x":50.3,"y":74.8,"t":"防音室","sec":"防音室","w":1109,"h":1479,"large":"img/22-l.webp","thumb":"img/22-t.webp"},{"type":"photo","id":20,"f":1,"x":156.8,"y":161.9,"t":"防音室","sec":"防音室","w":1109,"h":1479,"large":"img/20-l.webp","thumb":"img/20-t.webp"},{"type":"photo","id":15,"f":1,"x":199.5,"y":63.0,"t":"洗面化粧台（ダブルボウル）","sec":"洗面・浴室","w":1000,"h":1333,"large":"img/15-l.webp","thumb":"img/15-t.webp"},{"type":"photo","id":14,"f":1,"x":213.5,"y":154.2,"t":"洗面・トイレ","sec":"洗面・浴室","w":1109,"h":1479,"large":"img/14-l.webp","thumb":"img/14-t.webp"},{"type":"photo","id":16,"f":1,"x":224.6,"y":70.7,"t":"洗面・トイレ","sec":"洗面・浴室","w":1000,"h":749,"large":"img/16-l.webp","thumb":"img/16-t.webp"},{"type":"photo","id":17,"f":1,"x":251.0,"y":95.3,"t":"浴室（浴室テレビ）","sec":"洗面・浴室","w":1000,"h":749,"large":"img/17-l.webp","thumb":"img/17-t.webp"},{"type":"video","f":1,"x":248.6,"y":64.8,"t":"浴室（動画）","sec":"洗面・浴室","src":"media/bath.mp4","poster":"media/bath-poster.webp","thumb":"media/bath-poster.webp"},{"type":"photo","id":19,"f":1,"x":288.4,"y":61.9,"t":"浴室（浴槽）","sec":"洗面・浴室","w":1109,"h":1479,"large":"img/19-l.webp","thumb":"img/19-t.webp"},{"type":"photo","id":18,"f":1,"x":275.5,"y":102.8,"t":"浴室","sec":"洗面・浴室","w":1109,"h":1479,"large":"img/18-l.webp","thumb":"img/18-t.webp"},{"type":"photo","id":25,"f":2,"x":470.6,"y":195.6,"t":"LDK","sec":"LDK","w":1000,"h":749,"large":"img/25-l.webp","thumb":"img/25-t.webp"},{"type":"photo","id":27,"f":2,"x":391.0,"y":121.9,"t":"リビング（バルコニー方向）","sec":"LDK","w":1000,"h":749,"large":"img/27-l.webp","thumb":"img/27-t.webp"},{"type":"photo","id":26,"f":2,"x":481.5,"y":128.2,"t":"LDK（キッチン方向）","sec":"LDK","w":1000,"h":749,"large":"img/26-l.webp","thumb":"img/26-t.webp"},{"type":"photo","id":29,"f":2,"x":310.1,"y":98.6,"t":"ダイニング・ライティングレール","sec":"LDK","w":1109,"h":1479,"large":"img/29-l.webp","thumb":"img/29-t.webp"},{"type":"photo","id":30,"f":2,"x":362.1,"y":150.7,"t":"スタディコーナー・壁面収納","sec":"LDK","w":1479,"h":1109,"large":"img/30-l.webp","thumb":"img/30-t.webp"},{"type":"photo","id":28,"f":2,"x":530.3,"y":187.9,"t":"バルコニー","sec":"LDK","w":1000,"h":749,"large":"img/28-l.webp","thumb":"img/28-t.webp"},{"type":"photo","id":24,"f":2,"x":379.4,"y":200.9,"t":"階段","sec":"LDK","w":1108,"h":1238,"large":"img/24-l.webp","thumb":"img/24-t.webp"},{"type":"photo","id":31,"f":2,"x":278.0,"y":149.5,"t":"アイランドキッチン","sec":"キッチン・パントリー","w":1000,"h":749,"large":"img/31-l.webp","thumb":"img/31-t.webp"},{"type":"photo","id":32,"f":2,"x":278.6,"y":84.7,"t":"キッチン","sec":"キッチン・パントリー","w":1109,"h":1479,"large":"img/32-l.webp","thumb":"img/32-t.webp"},{"type":"photo","id":34,"f":2,"x":246.5,"y":84.7,"t":"キッチン（タッチレス水栓2基）","sec":"キッチン・パントリー","w":1109,"h":1479,"large":"img/34-l.webp","thumb":"img/34-t.webp"},{"type":"photo","id":35,"f":2,"x":199.7,"y":87.1,"t":"キッチン（3口コンロ）","sec":"キッチン・パントリー","w":1109,"h":1479,"large":"img/35-l.webp","thumb":"img/35-t.webp"},{"type":"photo","id":33,"f":2,"x":186.2,"y":63.4,"t":"キッチン背面・冷蔵庫スペース","sec":"キッチン・パントリー","w":1109,"h":1479,"large":"img/33-l.webp","thumb":"img/33-t.webp"},{"type":"photo","id":36,"f":2,"x":158.6,"y":73.7,"t":"パントリー","sec":"キッチン・パントリー","w":1109,"h":1479,"large":"img/36-l.webp","thumb":"img/36-t.webp"},{"type":"photo","id":37,"f":2,"x":125.8,"y":51.1,"t":"パントリー（可動棚）","sec":"キッチン・パントリー","w":1000,"h":749,"large":"img/37-l.webp","thumb":"img/37-t.webp"},{"type":"photo","id":39,"f":2,"x":132.9,"y":164.2,"t":"ワークスペース","sec":"ワークスペース・洗濯機置場","w":1109,"h":1479,"large":"img/39-l.webp","thumb":"img/39-t.webp"},{"type":"photo","id":38,"f":2,"x":184.3,"y":160.3,"t":"洗濯機置場","sec":"ワークスペース・洗濯機置場","w":1109,"h":1479,"large":"img/38-l.webp","thumb":"img/38-t.webp"},{"type":"photo","id":40,"f":2,"x":238.2,"y":195.6,"t":"階段（2階→3階）","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/40-l.webp","thumb":"img/40-t.webp"},{"type":"photo","id":41,"f":3,"x":362.7,"y":172.5,"t":"3階ホール・手洗い","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/41-l.webp","thumb":"img/41-t.webp"},{"type":"photo","id":42,"f":3,"x":368.5,"y":112.9,"t":"トイレ（3階）","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/42-l.webp","thumb":"img/42-t.webp"},{"type":"photo","id":44,"f":3,"x":405.1,"y":123.7,"t":"洋室（約6.6帖）","sec":"3階 洋室・納戸","w":1112,"h":1474,"large":"img/44-l.webp","thumb":"img/44-t.webp"},{"type":"photo","id":43,"f":3,"x":401.2,"y":194.9,"t":"洋室（約6.6帖）","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/43-l.webp","thumb":"img/43-t.webp"},{"type":"photo","id":45,"f":3,"x":248.5,"y":174.4,"t":"洋室（約5.0帖）","sec":"3階 洋室・納戸","w":1000,"h":749,"large":"img/45-l.webp","thumb":"img/45-t.webp"},{"type":"photo","id":46,"f":3,"x":297.9,"y":170.1,"t":"洋室（約5.0帖）","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/46-l.webp","thumb":"img/46-t.webp"},{"type":"photo","id":47,"f":3,"x":204.2,"y":188.7,"t":"納戸（約4.0帖）","sec":"3階 洋室・納戸","w":1109,"h":1479,"large":"img/47-l.webp","thumb":"img/47-t.webp"}],"docs":[{"key":"A","f":1,"x":399.0,"y":156.8,"file":"docs/smart-key.pdf","name":"玄関ドア スマートコントロールキー","note":"LIXIL ／ ボタン・カード・リモコンで施解錠","area":"玄関","pages":1,"mb":"318KB","big":false},{"key":"B","f":1,"x":483.2,"y":148.5,"file":"docs/delivery-box.pdf","name":"宅配ボックス付き機能門柱","note":"不在時も荷物を受け取れます","area":"アプローチ","pages":1,"mb":"112KB","big":false},{"key":"C","f":1,"x":419.4,"y":176.6,"file":"docs/storage-examples.pdf","name":"収納のコーディネート実例","note":"DAIKEN「収育スタイリング」","area":"玄関","pages":1,"mb":"270KB","big":false},{"key":"D","f":1,"x":93.0,"y":151.9,"file":"docs/soundproof-room-catalog.pdf","name":"防音室 総合カタログ","note":"DAIKEN「サウンドデザイン」","area":"防音室","pages":172,"mb":"43.4MB","big":true},{"key":"E","f":1,"x":77.8,"y":54.2,"file":"docs/air-conditioner-manual.pdf","name":"ルームエアコン 取扱説明書","note":"三菱電機 霧ヶ峰","area":"防音室","pages":10,"mb":"1.8MB","big":false},{"key":"F","f":1,"x":265.0,"y":26.2,"file":"docs/bathroom-spage.pdf","name":"システムバス 仕様","note":"LIXIL「SPAGE（スパージュ）」","area":"浴室","pages":1,"mb":"511KB","big":false},{"key":"G","f":1,"x":200.1,"y":25.7,"file":"docs/vanity.pdf","name":"洗面化粧台 仕様","note":"LIXIL（INAX）","area":"洗面","pages":1,"mb":"536KB","big":false},{"key":"H","f":1,"x":187.8,"y":119.2,"file":"docs/toilet-satis.pdf","name":"トイレ 製品資料","note":"LIXIL「サティス Sタイプ」","area":"洗面・トイレ","pages":4,"mb":"518KB","big":false},{"key":"I","f":2,"x":531.6,"y":133.4,"file":"docs/louver-catalog.pdf","name":"外観ルーバー カタログ","note":"「コートラインⅡ」","area":"バルコニー","pages":76,"mb":"7.5MB","big":false},{"key":"J","f":2,"x":380.1,"y":59.0,"file":"docs/video-doorphone.pdf","name":"テレビドアホン","note":"Panasonic VL-SWD505KS ／ スマホで来客対応","area":"LDK","pages":2,"mb":"1.1MB","big":false},{"key":"K","f":2,"x":319.1,"y":136.6,"file":"docs/lighting-plan.pdf","name":"照明計画図","note":"全フロアの照明プラン","area":"LDK","pages":2,"mb":"783KB","big":false},{"key":"L","f":2,"x":416.7,"y":57.1,"file":"docs/misel-catalog.pdf","name":"壁面収納 カタログ","note":"DAIKEN「MiSEL（ミセル）」","area":"LDK","pages":2,"mb":"106KB","big":false},{"key":"M","f":2,"x":457.7,"y":56.4,"file":"docs/tv-board.pdf","name":"収納TVボード 資料","note":"DAIKEN「MiSEL」","area":"LDK","pages":1,"mb":"4.7MB","big":false},{"key":"N","f":2,"x":226.6,"y":112.8,"file":"docs/kitchen.pdf","name":"システムキッチン 仕様","note":"タカラスタンダード ／ LIXIL 自動水栓ナビッシュ×2","area":"キッチン","pages":1,"mb":"350KB","big":false},{"key":"O","f":2,"x":461.6,"y":166.8,"file":"docs/tv-board-examples.pdf","name":"TVボードのコーディネート実例","note":"DAIKEN「収育スタイリング」","area":"LDK","pages":1,"mb":"260KB","big":false},{"key":"P","f":2,"x":202.2,"y":49.9,"file":"docs/storage-examples.pdf","name":"収納のコーディネート実例","note":"DAIKEN「収育スタイリング」","area":"パントリー","pages":1,"mb":"270KB","big":false}],"floors":[{"n":1,"crop":[10,16,572,228]},{"n":2,"crop":[68,8,506,222]},{"n":3,"crop":[125,46,430,216]}]};
+</script>
+<script>
+(() => {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const ICON = {
+    photo: '<svg viewBox="0 0 24 24"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6z"/></svg>',
+    video: '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
+    doc: '<svg viewBox="0 0 24 24"><path d="M6 2h8l6 6v14H6V2zm7 1.5V9h5.5L13 3.5zM8 12v1.6h10V12H8zm0 3.4V17h10v-1.6H8zm0 3.4v1.6h7v-1.6H8z"/></svg>'
+  };
+  const items = DATA.items;           // gallery order (photos + video)
+  const floors = DATA.floors;
+  let curFloor = 1;
+
+  /* ---------------- floor plan ---------------- */
+  const stage = $(".plan-stage");
+  let rotated = null;
+
+  function buildPins() {
+    for (const f of floors) {
+      const box = $(`.plan-floor[data-floor="${f.n}"] .pins`);
+      const pins = [];
+      items.forEach((it, i) => { if (it.f === f.n) pins.push({ kind: it.type, i, x: it.x, y: it.y, t: it.t }); });
+      DATA.docs.forEach((d, k) => { if (d.f === f.n) pins.push({ kind: "doc", k, x: d.x, y: d.y, t: d.name }); });
+      box.innerHTML = pins.map(p => `<button type="button" class="pin pin-${p.kind}" data-kind="${p.kind}" ${p.kind === "doc" ? `data-k="${p.k}"` : `data-i="${p.i}"`} data-x="${p.x}" data-y="${p.y}" data-tip="${p.t}" aria-label="${p.kind === "doc" ? "設備資料" : p.kind === "video" ? "動画" : "写真"}：${p.t}">${ICON[p.kind]}</button>`).join("");
+    }
+  }
+
+  function layoutPlan() {
+    const w = stage.clientWidth;
+    const rot = w < 640;
+    if (rot === rotated) return;
+    rotated = rot;
+    for (const f of floors) {
+      const el = $(`.plan-floor[data-floor="${f.n}"]`);
+      const svg = $("svg", el);
+      const [cx, cy, cw, ch] = f.crop;
+      if (rot) {
+        svg.setAttribute("viewBox", `0 0 ${ch} ${cw}`);
+        $(".rot", svg).setAttribute("transform", `translate(${cy + ch} ${-cx}) rotate(90)`);
+      } else {
+        svg.setAttribute("viewBox", `0 0 ${cw} ${ch}`);
+        $(".rot", svg).setAttribute("transform", `translate(${-cx} ${-cy})`);
+      }
+      el.style.maxWidth = rot ? "560px" : "1000px";
+      el.classList.toggle("is-rot", rot);
+      $$(".lbl", svg).forEach(g => {
+        const x = rot && g.dataset.rx ? g.dataset.rx : g.dataset.x;
+        const y = rot && g.dataset.ry ? g.dataset.ry : g.dataset.y;
+        g.setAttribute("transform", rot ? `translate(${x} ${y}) rotate(-90)` : `translate(${x} ${y})`);
+      });
+      $$(".pin", el).forEach(p => {
+        const x = +p.dataset.x, y = +p.dataset.y;
+        const left = rot ? (cy + ch - y) / ch : (x - cx) / cw;
+        const top = rot ? (x - cx) / cw : (y - cy) / ch;
+        p.style.left = (left * 100).toFixed(3) + "%";
+        p.style.top = (top * 100).toFixed(3) + "%";
+      });
+    }
+    $(".compass svg").style.transform = rot ? "none" : "rotate(-90deg)";
+  }
+
+  function setFloor(n, focusTab) {
+    curFloor = n;
+    $$(".floor-tabs [role=tab]").forEach(b => {
+      const on = +b.dataset.floor === n;
+      b.setAttribute("aria-selected", on);
+      b.tabIndex = on ? 0 : -1;
+      if (on && focusTab) b.focus();
+    });
+    $$(".plan-floor").forEach(el => { el.hidden = +el.dataset.floor !== n; });
+    $$(".summary").forEach(el => { el.hidden = +el.dataset.floor !== n; });
+    const list = items.map((it, i) => ({ it, i })).filter(o => o.it.f === n);
+    $("#strip-title").textContent = `${n}Fの写真・動画（${list.length}）`;
+    $("#strip").innerHTML = list.map(({ it, i }) => `<button type="button" data-i="${i}"><img src="${it.thumb}" alt="" loading="lazy" width="92" height="92"><span>${it.t}</span></button>`).join("");
+  }
+
+  $(".floor-tabs").addEventListener("click", e => { const b = e.target.closest("[role=tab]"); if (b) setFloor(+b.dataset.floor); });
+  $(".floor-tabs").addEventListener("keydown", e => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const n = ((curFloor - 1 + (e.key === "ArrowRight" ? 1 : 2)) % 3) + 1;
+    setFloor(n, true);
+  });
+  $$(".layers input").forEach(inp => inp.addEventListener("change", () => stage.classList.toggle("hide-" + inp.dataset.layer, !inp.checked)));
+  stage.addEventListener("click", e => {
+    const p = e.target.closest(".pin"); if (!p) return;
+    if (p.dataset.kind === "doc") openDoc(+p.dataset.k); else openLB(+p.dataset.i);
+  });
+  $("#strip").addEventListener("click", e => { const b = e.target.closest("[data-i]"); if (b) openLB(+b.dataset.i); });
+
+  function locate(i) {
+    const it = items[i];
+    closeLB();
+    setFloor(it.f);
+    $("#plan").scrollIntoView({ behavior: "smooth", block: "start" });
+    const pin = $(`.plan-floor[data-floor="${it.f}"] .pin[data-i="${i}"]`);
+    if (pin) {
+      stage.classList.remove("hide-" + it.type);
+      $(`.layers input[data-layer="${it.type}"]`).checked = true;
+      pin.classList.remove("pulse"); void pin.offsetWidth; pin.classList.add("pulse");
+      setTimeout(() => pin.classList.remove("pulse"), 3600);
+    }
+  }
+
+  /* ---------------- lightbox ---------------- */
+  const lb = $("#lb"), lbStage = $("#lb-stage");
+  let cur = -1, media = null, lastFocus = null;
+
+  function miniMap(it) {
+    const f = floors[it.f - 1];
+    const [cx, cy, cw, ch] = f.crop;
+    return `<svg viewBox="${cx} ${cy} ${cw} ${ch}" aria-hidden="true"><use href="#f${f.n}-base"/><circle cx="${it.x}" cy="${it.y}" r="15" fill="#c25e37" fill-opacity=".25"/><circle cx="${it.x}" cy="${it.y}" r="7" fill="#c25e37" stroke="#fff" stroke-width="2.5"/></svg>`;
+  }
+
+  function render(dir) {
+    const it = items[cur];
+    $("#lb-count").textContent = `${cur + 1} / ${items.length}`;
+    $("#lb-sec").textContent = `${it.f}F ・ ${it.sec}`;
+    $("#lb-title").textContent = it.t;
+    $("#lb-mini").innerHTML = miniMap(it);
+    if (media) media.remove();
+    if (it.type === "video") {
+      media = document.createElement("video");
+      Object.assign(media, { controls: true, playsInline: true, preload: "metadata", poster: it.poster, src: it.src });
+      media.className = "lb-media";
+      lbStage.classList.remove("loading");
+    } else {
+      media = new Image();
+      media.className = "lb-media";
+      media.alt = it.t;
+      media.width = it.w; media.height = it.h;
+      media.decoding = "async";
+      lbStage.classList.add("loading");
+      media.onload = () => lbStage.classList.remove("loading");
+      media.src = it.large;
+    }
+    if (dir) { media.style.transform = `translateX(${dir * 40}px)`; media.style.opacity = "0"; }
+    lbStage.prepend(media);
+    if (dir) requestAnimationFrame(() => requestAnimationFrame(() => { media.style.transform = ""; media.style.opacity = ""; }));
+    [cur + 1, cur - 1].forEach(j => { const n = items[(j + items.length) % items.length]; if (n.type === "photo") { const im = new Image(); im.src = n.large; } });
+  }
+
+  function openLB(i) {
+    lastFocus = document.activeElement;
+    cur = i;
+    lb.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    render(0);
+    requestAnimationFrame(() => lb.classList.add("is-open"));
+    $("#lb-close").focus();
+    if (location.hash !== "#view") history.pushState({ lb: true }, "", "#view");
+  }
+  function closeLB(fromPop) {
+    if (lb.hidden) return;
+    lb.classList.remove("is-open");
+    lb.hidden = true;
+    if (media) { if (media.pause) media.pause(); media.remove(); media = null; }
+    document.documentElement.style.overflow = "";
+    if (!fromPop && history.state && history.state.lb) history.back();
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
+  }
+  function go(d) { cur = (cur + d + items.length) % items.length; render(d); }
+
+  window.addEventListener("popstate", () => closeLB(true));
+  $("#lb-close").addEventListener("click", () => closeLB());
+  $("#lb-prev").addEventListener("click", () => go(-1));
+  $("#lb-next").addEventListener("click", () => go(1));
+  $("#lb-loc").addEventListener("click", () => locate(cur));
+  $("#lb-mini").addEventListener("click", () => locate(cur));
+  document.addEventListener("keydown", e => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeLB();
+    else if (e.key === "ArrowRight") go(1);
+    else if (e.key === "ArrowLeft") go(-1);
+    else if (e.key === "Tab") {
+      const f = $$("button, video", lb).filter(el => el.offsetParent !== null);
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // swipe
+  let sx = 0, sy = 0, dx = 0, tracking = false, pid = null;
+  lbStage.addEventListener("pointerdown", e => {
+    if (!media || media.tagName === "VIDEO" || e.target.closest(".lb-nav") || !e.isPrimary) return;
+    tracking = true; pid = e.pointerId; sx = e.clientX; sy = e.clientY; dx = 0;
+  });
+  lbStage.addEventListener("pointermove", e => {
+    if (!tracking || e.pointerId !== pid) return;
+    dx = e.clientX - sx;
+    if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - sy)) {
+      media.classList.add("dragging");
+      media.style.transform = `translateX(${dx}px)`;
+    }
+  });
+  const endSwipe = e => {
+    if (!tracking || e.pointerId !== pid) return;
+    tracking = false;
+    media.classList.remove("dragging");
+    if (Math.abs(dx) > 60) go(dx < 0 ? 1 : -1); else media.style.transform = "";
+  };
+  lbStage.addEventListener("pointerup", endSwipe);
+  lbStage.addEventListener("pointercancel", endSwipe);
+
+  /* ---------------- docs ---------------- */
+  const sheet = $("#sheet");
+  function openDoc(k) {
+    const d = DATA.docs[k];
+    $("#sh-area").textContent = `${d.f}F ・ ${d.area}`;
+    $("#sh-name").textContent = d.name;
+    $("#sh-note").textContent = d.note;
+    $("#sh-meta").textContent = `PDF ・ ${d.pages}ページ ・ ${d.mb}`;
+    $("#sh-warn").hidden = !d.big;
+    $("#sh-open").href = d.file;
+    if (sheet.showModal) sheet.showModal(); else window.open(d.file, "_blank");
+  }
+  $("#sh-close").addEventListener("click", () => sheet.close());
+  sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); });
+
+  /* ---------------- gallery & highlights ---------------- */
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".g-item, .hl-card");
+    if (b) openLB(+b.dataset.i);
+  });
+
+  /* ---------------- nav: current section ---------------- */
+  const links = $$(".nav-links a");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      links.forEach(a => a.classList.toggle("is-current", a.getAttribute("href") === "#" + en.target.id));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["highlights", "plan", "gallery", "video", "docs"].forEach(id => io.observe(document.getElementById(id)));
+
+  /* ---------------- share ---------------- */
+  $(".share").addEventListener("click", async () => {
+    const url = location.href.split("#")[0].split("?")[0];
+    try {
+      if (navigator.share) await navigator.share({ title: document.title, url });
+      else { await navigator.clipboard.writeText(url); alert("URLをコピーしました"); }
+    } catch (_) {}
+  });
+
+  buildPins();
+  layoutPlan();
+  setFloor(1);
+  new ResizeObserver(layoutPlan).observe(stage);
+  if (location.hash === "#view") history.replaceState(null, "", location.pathname + location.search);
+})();
+</script>
+</body>
+</html>
